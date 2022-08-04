@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS cluster_db;
+CREATE DATABASE cluster_db;
