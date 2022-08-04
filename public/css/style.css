@@ -263,3 +263,18 @@ input {
     margin: 1rem 0;
     transition: ease-out 0.3s;
 }
+
+.logpage{
+  color:white;
+  margin: 1rem 0;
+  transition: ease-out 0.3s;
+}
+
+.logpage:hover{
+  color:#66235a;
+}
+
+.custom1{
+  display: flex;
+  justify-content: space-between;
+}
