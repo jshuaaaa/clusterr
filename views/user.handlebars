@@ -1,0 +1,10 @@
+<button id="home">Home</button>
+<h1>{{username}}</h1>
+
+<h3>{{username}} Posts!</h3>
+
+    {{#each posts as |post|}}
+    {{> user-posts}}
+    {{/each}}
+
+<script src="/js/user.js"></script>

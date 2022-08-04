@@ -1,0 +1,18 @@
+<button id="home">Home</button>
+
+<section class="card post">
+    <header id="user">{{posted_by}}</header>
+
+    <div class="card-body">
+      <p>By: {{post_content}}</p>
+    </div>
+  </a>
+<input id="comment-data" type="text">
+<button id="comment">Submit</button>
+</section>
+<section class="comments">
+    {{#each comments as |comment|}}
+    {{> comments}}
+    {{/each}}
+</section>
+<script src="/js/post.js"></script>
