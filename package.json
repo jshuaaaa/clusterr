@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.7.2",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "cookie-parser": "^1.4.6",
@@ -21,7 +22,8 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "web3": "^1.7.5"
   },
   "devDependencies": {
     "eslint": "^7.12.1",

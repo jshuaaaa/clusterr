@@ -54,6 +54,7 @@ router.get('/home', withAuth,  async (req,res) => {
         console.log(err);
         res.status(500).json(err);
       }
+
     });
 
 router.get('/post/:id', async (req,res) => {
