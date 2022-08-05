@@ -26,7 +26,10 @@ Users.init(
       validate: {
         len: [8],
       }
-    }
+    },
+  metamask: {
+    type: DataTypes.BOOLEAN
+  }
   },
   {
     hooks: {

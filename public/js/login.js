@@ -1,6 +1,14 @@
 
 
 document.getElementById('submit-login').addEventListener("click", submitLogin)
+if (typeof web3 !== 'undefined') {
+    web3 = new Web3(ethereum);
+    console.log(web3.eth.accounts);
+} else {
+    web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+}
+
+
 
 async function submitLogin(e) {
     e.preventDefault()

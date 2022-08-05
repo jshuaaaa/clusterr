@@ -4,6 +4,7 @@ var backTimeLineBtn = document.getElementById("backTimeline")
 var themeBtn = document.querySelector(".themeSelector")
 var homeSecs = document.querySelectorAll('.homeSections')
 let buttonStatus = true;
+const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
 
 
 document.querySelectorAll(".friendName").forEach((item) => {
@@ -27,6 +28,7 @@ groupBackBtn.addEventListener("click", function () {
   groupBackBtn.style.display = "none";
 });
 
+console.log(window.ethereum)
 
 
 
