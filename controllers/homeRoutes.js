@@ -1,4 +1,4 @@
-const {Posts} = require('../models');
+const {Posts, Friends} = require('../models');
 const {Comment} = require('../models');
 const { Groups } = require('../models/index');
 const router = require('express').Router();
@@ -35,7 +35,17 @@ router.get('/home', withAuth, async (req,res) => {
         const dbTimelineData = await Posts.findAll({
         });
         const dbGroupData = await Groups.findAll();
+        const dbFriendsData = await Friends.findAll({
+            where: {
+                user: req.session.user_id
+            },
+            attributes: {
+                exclude: ['id', 'user']
+            }
+        });
 
+        const friends = dbFriendsData.map(friend => friend.get({ plain: true }));
+        console.log(friends);
         const array = dbTimelineData.map((result) =>
         result.get({ plain: true })
         );
@@ -47,7 +57,7 @@ router.get('/home', withAuth, async (req,res) => {
             posts.push(post)
         }
         res.render('home', 
-          {posts, groups},
+          {posts, groups, friends},
         );
       } catch (err) {
         console.log(err);

@@ -94,25 +94,11 @@
     <section class="homeSections  sideSections sectionRight">
         <button type="button" class="backFriends hidden" id="backFriends">BACK</button>
         <h1>Friends</h1>
-        
-            
             <ul id="friendList">
-            <li class="box1 friendName">
-                {{!-- <div class="box">
-	
-</div> --}}
-                Samus
-            </li>
-            <li class="friendName box1">Link</li>
-            <li class="friendName box1">Mario</li>
-            <li class="friendName box1">Sonic</li>
-            <li class="friendName box1">Terry</li>
-            <li class="friendName box1">Megan-Man</li>
-            <li class="friendName box1">MewTwo</li>
-            <li class="friendName box1">Donkey Kong</li>
-            <li class="friendName box1">Pac-Man</li>
-            <li class="friendName box1">Kirby</li>
-        </ul>
+                {{#each friends as |friend|}}
+                {{> friends}}
+                {{/each}}
+            </ul>
     </section>
 </div>
 
