@@ -90,8 +90,20 @@ router.post('/add-group', async (req, res) => {
 // friend routes
 router.post('/friends', async (req, res) => {
   try {
+    const alreadyFriends = await Friends.findOne({
+      where: {
+        user: req.session.user_id,
+        friend: req.body.friend
+      }
+    })
+
+    if (alreadyFriends) {
+      res.status(400).json({ message: 'Already friends!' });
+      return;
+    }
+    
     const request = await Friends.create({
-      user: req.body.user,
+      user: req.session.user_id,
       friend: req.body.friend
     });
 
@@ -105,7 +117,7 @@ router.delete('/friends', async (req, res) => {
   try {
     const remove = await Friends.destroy({
       where: {
-        user: req.body.user,
+        user: req.session.user_id,
         friend: req.body.friend
       }
     });
@@ -115,7 +127,7 @@ router.delete('/friends', async (req, res) => {
       return;
     }
 
-    res.status(200).json({ message: `${req.body.user} has removed ${req.body.friend} from friends list.` });
+    res.status(200).json({ message: `${req.session.username} has removed ${req.body.friend} from friends list.` });
   } catch (err) {
     res.status(500).json(err);
   }

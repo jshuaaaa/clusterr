@@ -1,5 +1,4 @@
 var groupBackBtn = document.getElementById("backGroups");
-var backFriendsBtn = document.getElementById("backFriends");
 var backTimeLineBtn = document.getElementById("backTimeline")
 var themeBtn = document.querySelector(".themeSelector")
 var homeSecs = document.querySelectorAll('.homeSections')
@@ -27,11 +26,6 @@ document.querySelectorAll(".friendName").forEach((friend) => {
     });
   });
 
-  backFriendsBtn.addEventListener("click", function () {
-    backFriendsBtn.style.display = "none";
-  });
-  
-
 document.querySelectorAll(".groupLink").forEach((item) => {
   item.addEventListener("click", () => {
     groupBackBtn.style.display = "inline";
@@ -47,7 +41,7 @@ console.log(window.ethereum)
 
 
 
-
+// All modal functionality
 
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
@@ -124,6 +118,29 @@ console.log('done')
     alert("Please submit a group name")
   }
 }
+
+// functionality for adding a friend
+document.getElementById("add-friend").addEventListener("click", addFriend)
+
+async function addFriend(e) {
+  const friendName = document.getElementById('friendName').value.trim()
+  
+  if(friendName) {
+    e.preventDefault()
+    const addFriend = await fetch('/api/users/friends', {
+      method: 'POST',
+      body: JSON.stringify({ friend: friendName }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+
+    if (!addFriend.ok) {
+      alert('Friend either does not exist or is already added!');
+    }
+  } else {
+    alert("Please submit a friend name")
+  }
+}
+
 
 document.getElementById('submit-search-group').addEventListener("click", findGroup)
 
