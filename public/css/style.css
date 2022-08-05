@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Cinzel Decorative", sans-serif;
+  font-family: "Raleway", sans-serif;
   overflow: hidden;
 }
 
@@ -18,6 +18,8 @@ body {
   z-index: -1;
 }
 
+
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -25,6 +27,10 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
   padding: 0 2rem;
+}
+
+.slogan{
+  color: #fff;
 }
 
 .logo {
@@ -42,16 +48,15 @@ body {
   position: relative;
   left: 200px;
   min-height: 100vh;
+  
 }
 
 .logo img {
   display: flex;
-  left: 475px;
-  bottom: 50px;
-  width: 300px;
+  width: 350px;
   position: relative;
-	/* left: 450px;
-	bottom: 80px; */
+	left: 500px;
+	bottom: 150px;
   animation-duration: 2s;
   animation-name: slideImg;
 }
@@ -60,9 +65,10 @@ body {
   margin: 15px 0;
   color: #fff;
   left: 100px;
-  font-size: 5rem;
+  font-size: 7rem;
   animation-duration: 2s;
   animation-name: slidein;
+  cursor: pointer;
 }
 
 @keyframes slidein {
@@ -111,7 +117,7 @@ body {
 
 #login {
   display: inline-block;
-  width: 100px;
+  width: 150px;
   height: 50px;
   border-radius: 25px;
   outline: none;
@@ -124,7 +130,7 @@ body {
     #66235a
   );
   background-size: 200%;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #fff;
   font-family: "Raleway", sans-serif;
   margin: 1rem 0;
@@ -134,12 +140,12 @@ body {
 }
 
 #login:hover {
-  box-shadow: inset 100px 0 0 0 #66235a;
+  box-shadow: inset 150px 0 0 0 #66235a;
 }
 
 #signup {
   display: inline-block;
-  width: 100px;
+  width: 150px;
   height: 50px;
   border-radius: 25px;
   outline: none;
@@ -152,7 +158,7 @@ body {
     #66235a
   );
   background-size: 200%;
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #fff;
   font-family: "Raleway", sans-serif;
   margin: 1rem 0;
@@ -162,7 +168,7 @@ body {
 }
 
 #signup:hover {
-  box-shadow: inset 100px 0 0 0 #66235a;
+  box-shadow: inset 150px 0 0 0 #66235a;
 }
 
 .input-div.pass {
