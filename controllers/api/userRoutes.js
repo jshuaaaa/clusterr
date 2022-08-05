@@ -7,7 +7,7 @@ router.post('/signup', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
       metamask: req.body.metamask,
-      address: req.body.sigAddress
+      address: req.body.account
     });
     res.status(201).json(newUser);
     res.render('home')
@@ -36,12 +36,23 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    if(req.body.metamask === true) {
+    req.session.save(() => {
+      req.session.user_id = req.body.username;
+      req.session.logged_in = true;
+      req.session.address = req.body.account;
+      
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+  } else {
     req.session.save(() => {
       req.session.user_id = req.body.username;
       req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
+
+  }
 
   } catch (err) {
     res.status(400).json({ message: 'oh noo'});

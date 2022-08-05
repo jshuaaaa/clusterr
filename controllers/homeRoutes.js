@@ -31,6 +31,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
 
 router.get('/home', withAuth, async (req,res) => {
     try {
+        console.log(req.session.address)
         const dbTimelineData = await Posts.findAll({
         });
         const dbGroupData = await Groups.findAll();
@@ -45,8 +46,6 @@ router.get('/home', withAuth, async (req,res) => {
            let post =  array[Math.floor(Math.random() * array.length)]
             posts.push(post)
         }
-
-        console.log({posts})
         res.render('home', 
           {posts, groups},
         );

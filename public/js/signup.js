@@ -55,7 +55,7 @@ async function connect(e) {
 
     const response = await fetch('/api/users/signup', {
         method: 'POST',
-    body: JSON.stringify({username, sigAddress, password, metamask}),
+    body: JSON.stringify({username, account, password, metamask}),
     headers: { 'Content-Type': 'application/json' },
 })
     window.location.href = '/home'

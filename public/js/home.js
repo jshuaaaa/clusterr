@@ -4,7 +4,13 @@ var backTimeLineBtn = document.getElementById("backTimeline")
 var themeBtn = document.querySelector(".themeSelector")
 var homeSecs = document.querySelectorAll('.homeSections')
 let buttonStatus = true;
-const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+if (typeof web3 !== 'undefined') {
+  web3 = new Web3(ethereum);
+  console.log(web3.eth.accounts);
+} else {
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+}
+// the following if statement is needed to connect users to metamask
 
 
 document.querySelectorAll(".friendName").forEach((item) => {
