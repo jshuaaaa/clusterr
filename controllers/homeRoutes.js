@@ -29,7 +29,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
     }
 })
 
-router.get('/home', withAuth,  async (req,res) => {
+router.get('/home', withAuth, async (req,res) => {
     try {
         const dbTimelineData = await Posts.findAll({
         });
