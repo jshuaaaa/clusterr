@@ -4,9 +4,10 @@ const { Users } = require('../../models');
 router.post('/signup', async (req, res) => {
   try {
     const newUser = await Users.create({
-      username: req.body.username || req.body.sigAddress,
+      username: req.body.username,
       password: req.body.password,
-      metamask: req.body.metamask
+      metamask: req.body.metamask,
+      address: req.body.sigAddress
     });
     res.status(201).json(newUser);
     res.render('home')

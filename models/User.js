@@ -27,6 +27,10 @@ Users.init(
         len: [8],
       }
     },
+    address: {
+      type: DataTypes.STRING
+      
+    },
   metamask: {
     type: DataTypes.BOOLEAN
   }
