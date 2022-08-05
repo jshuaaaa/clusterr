@@ -389,8 +389,13 @@ input#button:focus {
   height: fit-content;
   margin-bottom: 5%;
 }
-#timeLine > section::after {
+
+
   
+
+#timeline > section::after {
+  
+
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }

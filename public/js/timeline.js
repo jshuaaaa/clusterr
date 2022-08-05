@@ -31,9 +31,32 @@ data.forEach(element => {
 
 
 async function getPost(e) {
-    const id = e.target.parentElement.id
-    if(id) {
+    let id = e.target.parentElement.id
+    if(id === "timeline") {
+        id = e.target.id
+    }
+    if(id !== "timeline") {
     window.location.href = `/post/${id}`
     }
 }
 
+const groupData = document.querySelectorAll('.group-target')
+console.log(groupData)
+
+groupData.forEach(element => {
+    element.addEventListener("click", getGroupPost)
+    console.log(element)
+})
+
+
+async function getGroupPost(e) {
+    let id = e.target.parentElement.id
+    
+    if(id === "groupsList") {
+        id = e.target.id
+        console.log(id)
+    }
+    if(id !== "") {
+    window.location.href = `/groups/${id}`
+    }
+}

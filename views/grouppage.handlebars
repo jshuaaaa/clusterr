@@ -1,0 +1,28 @@
+<button id="home">Home</button>
+<h1>{{groupId}}</h1>
+
+<h3>{{groupId}} Posts!</h3>
+
+
+    {{#each posts as |post|}}
+    {{> groupposts}}
+    {{/each}}
+
+
+<button class="js-modal-trigger" data-target="modal-js-example">
+  Create Group
+</button>
+        <div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <h1>Create Group</h1>
+<input  class="postBox" type="text" id="post">
+    <a class="bn5"><button class="hid" role="button" id="post-timeline">POST</button></a>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<script src="/js/group.js"></script>

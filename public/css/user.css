@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Raleway, sans-serif;
+  
+  }
+
+html{
+    width: 100%;
+  }
+
+body {
+    width: 100%;
+    background-image: url("../img/colorBG.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+
+h1{
+    color: white;
+}
+
+h3{
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+#home{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(
+      to right,
+      #4e15ab,
+      #2d0c60,
+      #391239,
+      #66235a
+    );
+    background-size: 190%;
+    font-size: 1rem;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #66235a;
+    
+}
+
+#home:hover {
+    box-shadow: inset 100px 0 0 0 #66235a;
+  }
+
+.card{
+    background-color: #323030;
+    box-shadow: rgb(0, 0, 0) 5px 5px 0px 0px, rgb(0, 0, 0) 10px 10px 0px 0px,
+  rgb(0, 0, 0) 15px 15px 0px 0px, rgba(21, 0, 0, 0.145) 20px 20px 0px 0px,
+  rgba(0, 0, 0, 0.33) 25px 25px 0px 0px;
+  border-radius: 10px;
+}
+
+p{
+    color: #fff;
+    margin: 5px;
+}
+
+header{
+    color: #fff;
+}
