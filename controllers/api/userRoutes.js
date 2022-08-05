@@ -83,6 +83,24 @@ router.post('/friends', async (req, res) => {
   }
 });
 
-router.delete('/friends', async (req, res) => {});
+router.delete('/friends', async (req, res) => {
+  try {
+    const remove = await Friends.destroy({
+      where: {
+        user: req.body.user,
+        friend: req.body.friend
+      }
+    });
+
+    if (!remove) {
+      res.status(400).json({ message: 'Friendship either does not exist, or request did not include valid user or friend.' });
+      return;
+    }
+
+    res.status(200).json({ message: `${req.body.user} has removed ${req.body.friend} from friends list.` });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
