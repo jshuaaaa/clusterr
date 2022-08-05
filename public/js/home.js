@@ -105,8 +105,18 @@ async function createGroup(e) {
       body: JSON.stringify({ groupName, isPaid, cost}),
       headers: { 'Content-Type': 'application/json' },
 })
+
+const addGroupUser = await fetch('/api/users/add-group', {
+  method: 'POST',
+  body: JSON.stringify({ groupName}),
+  headers: { 'Content-Type': 'application/json' },
+})
 console.log('done')
   } else {
     alert("Please submit a group name")
   }
 }
+
+
+
+

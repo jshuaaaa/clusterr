@@ -109,5 +109,25 @@ router.get('/home/:username', async (req,res) => {
   })
 
 
+  router.get('/groups/:username', async (req,res) => {
+    const groupId = req.params.username
+    const dbUserData = await Posts.findAll({
+      where: {
+        for_group: req.params.username
+      }
+    });
+
+  
+    const posts = dbUserData.map((result) =>
+    result.get({ plain: true })
+  );
+    
+  
+    res.render('grouppage', 
+    {posts, groupId},
+    );
+
+  })
+
 
 module.exports = router;

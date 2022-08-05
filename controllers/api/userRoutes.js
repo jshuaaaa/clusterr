@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Users } = require('../../models');
+const { UserGroups } = require("../../models")
 
 router.post('/signup', async (req, res) => {
   try {
@@ -66,6 +67,19 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+router.post('/add-group', async (req, res) => {
+  try {
+    const newUser = await UserGroups.create({
+      user: req.session.user_id,
+      group_name: req.body.groupName
+    });
+    res.status(201).json(newUser);
+    res.render('home')
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
