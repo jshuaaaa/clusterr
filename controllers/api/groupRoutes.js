@@ -5,7 +5,8 @@ const router = require('express').Router();
 router.post('/create', async (req, res) => {
   try {
     const newGroup = await Groups.create({
-      group_name: req.body.group_name
+      group_name: req.body.group_name,
+      is_paid: req.body.paid
     });
     res.status(201).json(newGroup);
   } catch (err) {
