@@ -4,18 +4,26 @@ var backTimeLineBtn = document.getElementById("backTimeline")
 var themeBtn = document.querySelector(".themeSelector")
 var homeSecs = document.querySelectorAll('.homeSections')
 let buttonStatus = true;
+
 if (typeof web3 !== 'undefined') {
   web3 = new Web3(ethereum);
   console.log(web3.eth.accounts);
 } else {
   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 }
-// the following if statement is needed to connect users to metamask
 
+async function routeToFriend (friendName) {
+  let response = await fetch(`/home/${friendName}`);
+  if (response.ok) {
+    window.location.href = `/home/${friendName}`
+  } else {
+    alert('Failed to log in please try again')
+  }
+}
 
-document.querySelectorAll(".friendName").forEach((item) => {
-    item.addEventListener("click", () => {
-      backFriendsBtn.style.display = "inline";
+document.querySelectorAll(".friendName").forEach((friend) => {
+    friend.addEventListener("click", () => {
+      routeToFriend(friend.id);
     });
   });
 
