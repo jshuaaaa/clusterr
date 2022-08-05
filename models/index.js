@@ -3,6 +3,7 @@ const Posts = require('./Post');
 const Comment = require('./Comment');
 const Groups = require('./Group');
 const UserGroups = require('./UserGroups');
+const Friends = require('./Friends');
 
 Posts.belongsTo(Users);
 
@@ -14,4 +15,6 @@ UserGroups.hasMany(Users);
 
 UserGroups.hasMany(Groups);
 
-module.exports = { Users, Posts, Comment, Groups, UserGroups };
+Friends.hasMany(Users);
+
+module.exports = { Users, Posts, Comment, Groups, UserGroups, Friends };
