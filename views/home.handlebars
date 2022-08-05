@@ -20,6 +20,8 @@
     </div>
             </li>
             <li class="homeNavTitle">CLUSTER</li>
+            <input type="text" placeholder="Search for groups to join!"id="search-group">
+            <button id="submit-search-group">SUBMIT</button>
             <li class="homeNavTheme"><button type="button" class="themeSelector">THEME SELECTOR</button> <button id="logout">Logout</button></li>
         </ul>
     </nav>
@@ -64,9 +66,18 @@
 
 
         <ul id="groupList">
+            {{#if groups}}
             {{#each groups as |group|}}
             {{> groups}}
             {{/each}}
+            {{/if}}
+
+
+
+            {{#each searchGroups as |group|}}
+            {{> findgroups}}
+            {{/each}}
+
         </ul>
     </section>
     
