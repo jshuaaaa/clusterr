@@ -269,3 +269,16 @@ input {
     margin: 1rem 0;
     transition: ease-out 0.3s;
 }
+#metamask{
+  background: transparent;
+  border: none;
+  
+}
+.l2 {
+display:flex;
+justify-content: center;
+}
+.l3{
+  display:flex;
+  justify-content: center;
+}
