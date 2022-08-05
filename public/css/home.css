@@ -1,5 +1,7 @@
 
-  
+  #post-timeLine{
+    cursor: pointer;
+  }
 
 input {
   font-size: 30px;
