@@ -31,8 +31,12 @@ router.get('/signup', isLoggedIn, async (req,res) => {
 
 router.get('/home', withAuth, async (req,res) => {
     try {
+
         console.log(req.session.address)
         const dbTimelineData = await Posts.findAll({
+          where: {
+            for_group: null
+          }
         });
         const dbGroupData = await Groups.findAll();
         const dbFriendsData = await Friends.findAll({
@@ -65,6 +69,41 @@ router.get('/home', withAuth, async (req,res) => {
       }
 
     });
+
+    router.get('/search/:groupname', withAuth, async (req, res) => {
+      try {
+        console.log(req.session.address)
+        const dbTimelineData = await Posts.findAll({
+          where: {
+            for_group: null
+          }
+        });
+        const dbGroupData = await Groups.findAll();
+
+        const array = dbTimelineData.map((result) =>
+        result.get({ plain: true })
+        );
+        const groups = dbGroupData.map(group => group.get({ plain: true }));
+
+        const posts = []
+        for(let i =0; i<10; i++) {
+           let post =  array[Math.floor(Math.random() * array.length)]
+            posts.push(post)
+        }
+        
+        const newGroup = await Groups.findAll({
+          where: {
+            group_name: req.params.groupname
+          }
+        });
+        const searchGroups = newGroup.map(group => group.get({ plain: true }));
+        
+        res.render('home',{posts, searchGroups})
+      } catch (err) {
+        res.status(400).json({ message: 'Group name must be unique' });
+      }
+    });
+
 
 router.get('/post/:id', async (req,res) => {
     try {
@@ -138,6 +177,7 @@ router.get('/home/:username', async (req,res) => {
     );
 
   })
+
 
 
 module.exports = router;

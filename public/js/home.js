@@ -125,6 +125,19 @@ console.log('done')
   }
 }
 
+document.getElementById('submit-search-group').addEventListener("click", findGroup)
+
+
+async function findGroup(e) {
+  const groupName = document.getElementById('search-group').value.trim()
+  
+  if(groupName) {
+    e.preventDefault()
+    window.location.href = `/search/${groupName}`
+}
+}
+
+
 
 
 
