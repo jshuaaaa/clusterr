@@ -15,6 +15,10 @@ Groups.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
+    },
+    is_paid: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     }
   },
   {

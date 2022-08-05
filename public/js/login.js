@@ -49,7 +49,7 @@ document.getElementById("metamask").addEventListener('click', async function(e){
 
     const response = await fetch('/api/users/login', {
         method: 'POST',
-    body: JSON.stringify({username, sigAddress, password, metamask}),
+    body: JSON.stringify({username, account, password, metamask}),
     headers: { 'Content-Type': 'application/json' },
 })
     window.location.href = '/home'
