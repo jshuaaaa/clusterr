@@ -16,52 +16,9 @@
         <h1>Groups</h1>
         {{!-- INSERT CREATED / JOINED GROUPS BELOW --}}
         <ul id="groupList">
-            <li class="groupName">
-                <h3><a class="groupLink">Bahama Boys</a></h3>
-                <span class="groupMembers">3 members</span>
-            </li>
-            
-            <li class="groupName">
-                <h3><a class="groupLink" >Mother-Forkers</a></h3>
-                <span class="groupMembers" >5 members</span>
-            </li>
-
-            <li>
-                <h3><a class="groupLink">Get the Bag</a></h3>
-                <span class="groupMembers">4 members</span>
-            </li>
-
-            <li>
-                <h3><a class="groupLink">Coders United</a></h3>
-
-                <span class="groupMembers">9 members</span>
-            </li>
-
-            <li>
-                <h3><a class="groupLink">UCF</a></h3>
-                <span class="groupMembers">30 members</span>
-            </li>
-
-            <li>
-                <h3><a class="groupLink" >Nexus</a></h3>
-                <span class="groupMembers">6 members</span>
-            </li>
-            <li>
-                <h3><a class="groupLink">Anime n Chill</a></h3>
-                <span class="groupMembers">69 members</span>
-            </li>
-             <li>
-                <h3><a class="groupLink">Special Group</a></h3>
-                <span class="groupMembers">11 members</span>
-            </li>
-             <li>
-                <h3><a class="groupLink">Golfers</a></h3>
-                <span class="groupMembers">15 members</span>
-            </li>
-             <li>
-                <h3><a class="groupLink">WebDevs</a></h3>
-                <span class="groupMembers">19 members</span>
-            </li>
+            {{#each groups as |group|}}
+            {{> groups}}
+            {{/each}}
         </ul>
     </section>
     <div id="user-profile">
