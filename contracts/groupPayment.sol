@@ -2,7 +2,11 @@
 pragma solidity ^0.8.4;
 
 contract groupPayment {
-    constructor() payable {}
+    address public owner;
+
+    constructor() payable {
+        owner = msg.sender;
+    }
 
 
     function deposit(uint amount, address payable groupOwner) public payable {
@@ -13,6 +17,11 @@ contract groupPayment {
 
     function payGroupOwner(address payable groupOwner, uint amount) internal {
         groupOwner.transfer(amount);
+    }
+
+    function withdraw(address payable to, uint amount) public payable {
+        require(msg.sender == owner);
+        to.transfer(amount);
     }
 
 

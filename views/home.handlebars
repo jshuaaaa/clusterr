@@ -19,10 +19,44 @@
         </ul>
     </nav>
 </header>
+
+
+
+
+
 <div id="sectionContainer" class="sectionContainer">
     <section class="homeSections  sideSections sectionLeft">
         <button type="button" class="groupBackBtn hidden" id="backGroups">BACK</button>
         <h1>Groups</h1>
+        
+        
+        
+
+
+<button class="js-modal-trigger" data-target="modal-js-example">
+  Create Group
+</button>
+        <div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <h1>Create Group</h1>
+      <input id="group-name" placeholder="Enter your group name!" type="text">
+      <input id="paid"  title="Would you like a paid group? (ONLY FOR METAMASK USERS)" type="checkbox">
+      <input id="amount-to-pay" placeholder="How much does you group cost to join? (In ETH)" type="text">
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+
+
+
+
+
         {{!-- INSERT CREATED / JOINED GROUPS BELOW --}}
         <ul id="groupList">
             <li class="box1 groupName">

@@ -16,10 +16,6 @@ Groups.init(
       allowNull: false,
       unique: true
     },
-    is_paid: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
-    }
   },
   {
     sequelize,
