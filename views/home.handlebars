@@ -96,7 +96,23 @@
         </div>
     </section>
     <section class="homeSections  sideSections sectionRight">
-        <button type="button" class="backFriends hidden" id="backFriends">BACK</button>
+        
+        <button class="js-modal-trigger" data-target="modal-js-test">
+            Add Friend
+        </button>
+        <div id="modal-js-test" class="modal">
+            <div class="modal-background"></div>
+
+            <div class="modal-content">
+                <div class="box">
+                    <h1>Add Friend</h1>
+                    <input id="friendName" placeholder="Enter friend name" type="text">
+                    <button id="add-friend">Add Friend</button>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
         <h1>Friends</h1>
             <ul id="friendList">
                 {{#each friends as |friend|}}
