@@ -87,6 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.getElementById("create-group").addEventListener("click", createGroup)
 
-
-
+async function createGroup(e) {
+  const groupName = document.getElementById('group-name').value.trim()
+  const paid = document.getElementById('paid')
+  const cost = document.getElementById('cost').value.trim()
+  
+  if(groupName) {
+    e.preventDefault()
+    let isPaid = false
+    if(paid.checked) {
+      isPaid = true
+    }
+    const response = await fetch('/api/groups/create', {
+      method: 'POST',
+      body: JSON.stringify({ groupName, isPaid, cost}),
+      headers: { 'Content-Type': 'application/json' },
+})
+console.log('done')
+  } else {
+    alert("Please submit a group name")
+  }
+}

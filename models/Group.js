@@ -18,6 +18,17 @@ Groups.init(
     },
     is_paid: {
       type: DataTypes.BOOLEAN
+    },
+    cost: {
+      type: DataTypes.DECIMAL
+    },
+    ownedBy: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: "users",
+        key: "username"
+      }
     }
   },
   {
