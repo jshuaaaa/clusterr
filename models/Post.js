@@ -21,6 +21,16 @@ Posts.init(
     post_content: {
       type: DataTypes.TEXT
     },
+    is_group_post: {
+      type: DataTypes.BOOLEAN
+    },
+    for_group: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'groups',
+        key: 'group_name'
+      }
+    }
   },
   {
     sequelize,

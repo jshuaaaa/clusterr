@@ -19,66 +19,54 @@
         </ul>
     </nav>
 </header>
+
+
+
+
+
 <div id="sectionContainer" class="sectionContainer">
     <section class="homeSections  sideSections sectionLeft">
         <button type="button" class="groupBackBtn hidden" id="backGroups">BACK</button>
         <h1>Groups</h1>
-        {{!-- INSERT CREATED / JOINED GROUPS BELOW --}}
+        
+        
+        
+
+
+<button class="js-modal-trigger" data-target="modal-js-example">
+  Create Group
+</button>
+        <div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <h1>Create Group</h1>
+      <input id="group-name" placeholder="Enter your group name!" type="text">
+      <input id="paid"  title="Would you like a paid group? (ONLY FOR METAMASK USERS)" type="checkbox">
+      <input id="cost" placeholder="How much does you group cost to join? (In ETH)" type="text">
+      <button id="create-group">Create Group</button>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+
+
+
+
+
         <ul id="groupList">
-            <li class="box1 groupName">
-                {{!-- <div class="box">
-	
-</div> --}}
-                <h3><a class="groupLink">Bahama Boys</a></h3>
-                <span class="groupMembers">3 members</span>
-            </li>
-            
-            <li class="box1 groupName">
-                <h3><a class="groupLink" >Mother-Forkers</a></h3>
-                <span class="groupMembers" >5 members</span>
-            </li>
-
-            <li class="box1 groupName">
-                <h3><a class=" groupLink">Get the Bag</a></h3>
-                <span class="groupMembers">4 members</span>
-            </li>
-
-            <li class="box1 groupName">
-                <h3><a class="groupLink">Coders United</a></h3>
-
-                <span class="groupMembers">9 members</span>
-            </li>
-
-            <li class="box1 groupName">
-                <h3><a class="groupLink">UCF</a></h3>
-                <span class="groupMembers">30 members</span>
-            </li>
-
-            <li class="box1 groupName">
-                <h3><a class="groupLink" >Nexus</a></h3>
-                <span class="groupMembers">6 members</span>
-            </li>
-            <li class="box1 groupName">
-                <h3><a class="groupLink">Anime n Chill</a></h3>
-                <span class="groupMembers">69 members</span>
-            </li>
-             <li class="box1 groupName">
-                <h3><a class="groupLink">Special Group</a></h3>
-                <span class="groupMembers">11 members</span>
-            </li>
-             <li class="box1 groupName">
-                <h3><a class="groupLink">Golfers</a></h3>
-                <span class="groupMembers">15 members</span>
-            </li>
-             <li class="box1 groupName">
-                <h3><a class="groupLink">WebDevs</a></h3>
-                <span class="groupMembers">19 members</span>
-            </li>
+            {{#each groups as |group|}}
+            {{> groups}}
+            {{/each}}
         </ul>
     </section>
     
     <section class="homeSections">
-        <button type="button" class="hidden" id="backTimeline">BACK</button>
+        {{!-- <button type="button" class="hidden" id="backTimeline">BACK</button> --}}
         <h1></h1>
           <div id="centerBox" class="centerBox">
     <input  class="postBox" type="text" id="post">

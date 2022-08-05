@@ -7,9 +7,13 @@ const Friends = require('./Friends');
 
 Posts.belongsTo(Users);
 
+Posts.belongsTo(Groups)
+
 Users.hasMany(Posts);
 
 Posts.hasMany(Comment);
+
+Groups.hasMany(Posts)
 
 UserGroups.hasMany(Users);
 
