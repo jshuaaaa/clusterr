@@ -3,49 +3,124 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Raleway, sans-serif;
+  
   }
 
+input{
+    font-size: 30px;
+    padding-left: 20px;
+    background-color: rgb(218, 218, 218);
+    -webkit-transition: all 400ms ease-in-out;
+    overflow: auto;
+  }
+
+input:focus{
+    background-color: #fff;
+    width:400px;
+}
+
+ html{
+    width: 100%;
+  }
   
+body {
+    width: 100%;
+    background-image: url("../img/colorBG.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
    
 .post>.card-body> p{
-    color: white;
+    color: #fff;
+    font-weight: bolder;
+
 }
 
-.post>.user{
-color: white;
+
+#home{
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(
+      to right,
+      #4e15ab,
+      #2d0c60,
+      #391239,
+      #66235a
+    );
+    background-size: 190%;
+    font-size: 1rem;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+    box-shadow: inset 0 0 0 0 #66235a;
+    
 }
 
-.postbg {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
+#home:hover {
+    box-shadow: inset 100px 0 0 0 #66235a;
+  }
 
 .card{
-    background-color: #616161;
+    background-color: #323030;
+    box-shadow: rgb(0, 0, 0) 5px 5px 0px 0px, rgb(0, 0, 0) 10px 10px 0px 0px,
+  rgb(0, 0, 0) 15px 15px 0px 0px, rgba(21, 0, 0, 0.145) 20px 20px 0px 0px,
+  rgba(0, 0, 0, 0.33) 25px 25px 0px 0px;
 }
 
 
 
-.cardpost{
+
+#comment{
+    overflow: auto;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background: #6aacc8;
+    background-size: 190%;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: 0.5s;
     
+}
+
+
+
+#comment:hover{
+   color: rgba(255, 255, 255, 1);
+    width: 100px;
+}
+
+
+#comment-data{
+    border-radius: 25px;
+}
+
+#user{
+    font-family:  "Raleway", sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.post{
+    margin: 0%;
+    top: 50px;
   }
 
-.card-body{
-    
-  }
-
-.comment-data{
-    
-  }
-
-.comment{
-    
-  }
-
-#comments{
-   
-  }
