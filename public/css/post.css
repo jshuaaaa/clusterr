@@ -1,0 +1,51 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  
+   
+.post>.card-body> p{
+    color: white;
+}
+
+.post>.user{
+color: white;
+}
+
+.postbg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.card{
+    background-color: #616161;
+}
+
+
+
+.cardpost{
+    
+  }
+
+.card-body{
+    
+  }
+
+.comment-data{
+    
+  }
+
+.comment{
+    
+  }
+
+#comments{
+   
+  }
