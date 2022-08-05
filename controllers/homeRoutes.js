@@ -1,5 +1,6 @@
-const {Posts} = require('../models')
-const {Comment} = require('../models')
+const {Posts} = require('../models');
+const {Comment} = require('../models');
+const { Groups } = require('../models/index');
 const router = require('express').Router();
 const withAuth = require('../middleware/auth');
 const isLoggedIn = require('../middleware/loggedIn');
@@ -32,10 +33,12 @@ router.get('/home', withAuth,  async (req,res) => {
     try {
         const dbTimelineData = await Posts.findAll({
         });
+        const dbGroupData = await Groups.findAll();
 
         const array = dbTimelineData.map((result) =>
         result.get({ plain: true })
-    );
+        );
+        const groups = dbGroupData.map(group => group.get({ plain: true }));
 
         const posts = []
         for(let i =0; i<10; i++) {
@@ -45,7 +48,7 @@ router.get('/home', withAuth,  async (req,res) => {
 
         console.log({posts})
         res.render('home', 
-          {posts},
+          {posts, groups},
         );
       } catch (err) {
         console.log(err);
