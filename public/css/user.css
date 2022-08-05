@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -7,23 +6,10 @@
   
   }
 
-input{
-    font-size: 30px;
-    padding-left: 20px;
-    background-color: rgb(218, 218, 218);
-    -webkit-transition: all 400ms ease-in-out;
-    overflow: auto;
-  }
-
-input:focus{
-    background-color: #fff;
-    width:400px;
-}
-
- html{
+html{
     width: 100%;
   }
-  
+
 body {
     width: 100%;
     background-image: url("../img/colorBG.jpeg");
@@ -31,13 +17,17 @@ body {
     background-size: cover;
     z-index: -1;
   }
-   
-.post>.card-body> p{
-    color: #fff;
-    font-weight: bolder;
 
+h1{
+    color: white;
 }
 
+h3{
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
 
 #home{
     display: inline-block;
@@ -73,54 +63,14 @@ body {
     box-shadow: rgb(0, 0, 0) 5px 5px 0px 0px, rgb(0, 0, 0) 10px 10px 0px 0px,
   rgb(0, 0, 0) 15px 15px 0px 0px, rgba(21, 0, 0, 0.145) 20px 20px 0px 0px,
   rgba(0, 0, 0, 0.33) 25px 25px 0px 0px;
+  border-radius: 10px;
 }
 
-
-
-
-#comment{
-    overflow: auto;
-    display: inline-block;
-    width: 80px;
-    height: 40px;
-    border-radius: 8px;
-    outline: none;
-    border: none;
-    background: #6aacc8;
-    background-size: 190%;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: "Raleway", sans-serif;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: 0.5s;
-    
-}
-
-
-
-#comment:hover{
-   color: rgba(255, 255, 255, 1);
-    width: 100px;
-}
-
-
-#comment-data{
-    border-radius: 25px;
-}
-
-#user{
-    font-family:  "Raleway", sans-serif;
-    font-weight: bolder;
-    font-size: large;
+p{
     color: #fff;
-    letter-spacing: 1px;
+    margin: 5px;
 }
 
-.post{
-    margin: 0%;
-    top: 50px;
-  }
-
+header{
+    color: #fff;
+}
