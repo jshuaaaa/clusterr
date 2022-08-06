@@ -1,8 +1,26 @@
 
-<li id={{group_name}} class="box1 groupName group-target">
-<p class="groupLink">{{group_name}}</p>
-<span class="groupMembers">Owner: {{ownedBy}}</span>
+
+
+<div id="modal-js-example3" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+        <button id="join-group">Click to join this group!</button>
+        {{#if is_paid}}
+        <span class="groupMembers">WARNING THIS GROUP COSTS {{cost}} ETH TO join</span>
+        {{/if}}
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+<li id={{group_name}} class="box1 groupName group-target js-modal-trigger" data-target="modal-js-example3">
+<p class="groupLink" id="group">{{group_name}}</p>
+<span class="groupMembers">Owner: <span id="owner">{{ownedBy}}</span></span>
 {{#if is_paid}}
-<span class="groupMembers">Costs: {{cost}}</span>
+<span class="groupMembers">Costs: <span id="cost-of-group">{{cost}}</span> ETH</span>
 {{/if}}
 </li>

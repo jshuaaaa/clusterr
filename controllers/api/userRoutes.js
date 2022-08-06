@@ -1,6 +1,37 @@
 const router = require('express').Router();
+const Web3 = require('web3')
+const web3 = new Web3(Web3.givenProvider || "ws://localhost:8546")
+const groupPaymentAddress = "0xf8c7053A329669cDf621Ae93Af32F57CbF4b702c"
+const groupPayment = new web3.eth.Contract([
+    {
+        "inputs": [],
+        "name": "retrieve",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "num",
+                "type": "uint256"
+            }
+        ],
+        "name": "store",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+], groupPaymentAddress)
 
-const { Users, Friends } = require('../../models');
+const { Users, Friends, Groups } = require('../../models');
 const { UserGroups } = require("../../models")
 
 
@@ -75,16 +106,42 @@ router.post('/logout', (req, res) => {
 
 router.post('/add-group', async (req, res) => {
   try {
+
     const newUser = await UserGroups.create({
       user: req.session.user_id,
-      group_name: req.body.groupName
+      group_name: req.body.groupName || req.body.group
     });
     res.status(201).json(newUser);
-    res.render('home')
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+router.post('/add-group-user', async (req, res) => {
+  try {
+    const findGroup = await Groups.findOne({
+      where: {
+        group_name: req.body.group,
+        owned_by: req.body.owner
+      }
+    })
+
+    const findOwner = await Users.findOne({
+      where: {
+        username: req.body.owner
+      }
+    })
+    const result = []
+    
+    result.push(findOwner)
+    result.push(findGroup)
+    res.status(201).json(result);
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
 // friend routes
