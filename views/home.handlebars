@@ -2,10 +2,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/941d116b7a.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/home.css">
+
 
 
 <header class="homeHeader">
@@ -15,42 +18,31 @@
             <li class="userProfileNav">
             <div class="userProfile" id="user-profile">
                 <img class="profileImg" id="profileImage" src="../img/Ninja.png" alt="">
-                {{!-- <button class="userDirectProfile" id="user"></button> --}}
+                <button class="bn5 userDirectProfile" id="user">USER PROFILE</button>
               
     
     </div>
             </li>
-            <li class="homeNavTitle">CLUSTER</li>
-            <input type="text" placeholder="Search for groups to join!"id="search-group">
-            <button id="submit-search-group">SUBMIT</button>
-            <li class="homeNavTheme"><button type="button" class="themeSelector">THEME SELECTOR</button> <button id="logout">Logout</button></li>
+            <li class="homeNavTitle"><img  id="clust" class="clusLogo" src="../img/clusterlogo.png"></li>
+            
+            <li class="homeNavTheme"><button type="button" class="themeSelector bn5">THEME SELECTOR</button> <button class="bn5" id="logout">Logout</button></li>
         </ul>
     </nav>
 </header>
 
 
 
-
-
 <div id="sectionContainer" class="sectionContainer">
     <section class="homeSections  sideSections sectionLeft">
         <button type="button" class="groupBackBtn hidden" id="backGroups">BACK</button>
-        <h1>Groups</h1>
+        <h1><i class="js-modal-trigger groupAdd fa-solid fa-square-plus" data-target="modal-js-example"></i>Groups<i class="js-modal-trigger magGlass fa-solid fa-magnifying-glass" data-target="modal-js-example2"></i></h1>
         
-        
-        
-
-
-<button class="js-modal-trigger" data-target="modal-js-example">
-  Create Group
-</button>
         <div id="modal-js-example" class="modal">
   <div class="modal-background"></div>
 
   <div class="modal-content">
     <div class="box">
       <h1>Create Group</h1>
-      <input id="group-name" placeholder="Enter your group name!" type="text">
       <input id="paid"  title="Would you like a paid group? (ONLY FOR METAMASK USERS)" type="checkbox">
       <input id="cost" placeholder="How much does you group cost to join? (In ETH)" type="text">
       <button id="create-group">Create Group</button>
@@ -59,6 +51,29 @@
 
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
+
+<div id="modal-js-example2" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <h1>SEARCH GROUP</h1>
+      <input type="text" placeholder="Search for groups to join!"id="search-group">
+            <button id="submit-search-group">SUBMIT</button>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+
+    
+
+        
+        
+
+  
 
 
 
@@ -87,8 +102,19 @@
         <h1></h1>
           <div id="centerBox" class="centerBox">
     {{!-- <input   class="postBox" type="text" id="post"> --}}
-    <a class="bn5"><button class="hid" role="button" id="post-timeline"></button>POST</a>
-                </div>
+    <a class="bn5 js-modal-trigger" data-target="modal-js-example3"><button class="hid" role="button"></button>POST</a>
+    </div>
+    <div id="modal-js-example3" class="modal">
+  
+
+  <div class="modal-content">
+    <div class="box">
+      <h1>MAKE A POST</h1>
+      <input id="post" placeholder="Type anything!" type="text">
+      <button id="post-timeline">POST</button>
+    </div>
+  </div>
+    </div>
         <div id="timeline">
     {{#each posts as |post|}}
     {{> timeline}}
@@ -98,13 +124,8 @@
     </section>
     <section class="homeSections  sideSections sectionRight">
         
-        <button class="js-modal-trigger" data-target="modal-js-test">
-            Add Friend
-        </button>
         
-        <input autocomplete="on" type="text" placeholder="Search for friend name"id="search-friend">
-        <button id="submit-search-friend">Search</button>
-
+           
         <div id="modal-js-test" class="modal">
             <div class="modal-background"></div>
 
@@ -117,8 +138,19 @@
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
         </div>
+        <div id="modal-js-run" class="modal">
+            <div class="modal-background"></div>
 
-        <h1>Friends</h1>
+            <div class="modal-content">
+                <div class="box">
+                    <input autocomplete="on" type="text" placeholder="Search for friend name"id="search-friend">
+        <button id="submit-search-friend">Search</button>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <h1><i class="addFriendBtn fa-solid fa-user-plus js-modal-trigger" data-target="modal-js-test"></i>Friends<i class="lookFriendBtn fa-solid fa-magnifying-glass js-modal-trigger" data-target="modal-js-run"></i></h1>
             <ul id="friendList">
                 {{#each friends as |friend|}}
                 {{> friends}}
