@@ -13,13 +13,14 @@ let account
 signupButton.addEventListener("click", createUser)
 
 async function createUser(e) {
+    e.preventDefault();
     const confirmPassword = document.getElementById("confirm-password").value.trim()
-    const username = document.getElementById("username").value.trim()
-    const password = document.getElementById("password").value.trim()
+    const username = document.getElementById("username").value.trim().replace(/\s/g, "");
+    const password = document.getElementById("password").value.trim();
+    console.log(username);
     console.log(confirmPassword)
     console.log(password)
     if(username && password && confirmPassword && password === confirmPassword) {
-        e.preventDefault()
         let metamask = false
         const response = await fetch('/api/users/signup', {
             method: 'POST',
@@ -31,7 +32,6 @@ async function createUser(e) {
     }
     } else {
         alert('Failed to Sign up');
-        e.preventDefault()
     }
 
     
