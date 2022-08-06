@@ -18,7 +18,7 @@ const userData = [
     password: 'spicynoodl'
   },
   {
-    username: 'Monkey D. Luffy',
+    username: 'MonkeyDLuffy',
     password: 'onepiece'
   },
   {
