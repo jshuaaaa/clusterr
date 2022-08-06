@@ -210,26 +210,31 @@ router.get('/user/:username', async (req,res) => {
     
 
     const findGroup = await Groups.findAll({
+      raw: true,
       where: {
         id: parseInt(groupId)
       }
     })
-
-    // const dbUserData = await Posts.findAll({
-    //   where: {
-    //     for_group: req.params.username
-    //   }
-    // });
+    const { group_name } = findGroup[0]
+    if(findGroup) {
+    const dbUserData = await Posts.findAll({
+      where: {
+        for_group: group_name
+      }
+    });
 
   
-  //   const posts = dbUserData.map((result) =>
-  //   result.get({ plain: true })
-  // );
-    res.status(201).json(findGroup);
-    // res.render('grouppage', 
-    // {posts, groupId},
-    // ); 
+    const posts = dbUserData.map((result) =>
+    result.get({ plain: true })
+  );
 
+    console.log(group_name)
+    res.render('grouppage', 
+    {posts, group_name},
+    ); 
+  } else {
+    res.redirect('/home')
+  }
   })
 
 

@@ -62,7 +62,7 @@ async function getGroupPost(e) {
     }
     if(url.length === 4) {
     if(id !== "") {
-    window.location.href = `/groups/${id}`
+    window.location.href = `home/groups/${id}`
     }
 } else {
     e.preventDefault()

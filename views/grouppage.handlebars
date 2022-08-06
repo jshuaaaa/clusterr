@@ -1,7 +1,16 @@
 <button id="home">Home</button>
+
+{{#if group_name}}
+<h1>{{group_name}}</h1>
+
+<h3>{{group_name}} Posts!</h3>
+{{/if}}
+
+{{#if groupId}}
 <h1>{{groupId}}</h1>
 
 <h3>{{groupId}} Posts!</h3>
+{{/if}}
 
 
     {{#each posts as |post|}}
