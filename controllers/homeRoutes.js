@@ -30,7 +30,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
     }
 })
 
-router.get('/home', withAuth, async (req,res) => {
+router.get('/home',  async (req,res) => {
     try {
         const user = req.session.user_id
         console.log(req.session.address)
@@ -39,7 +39,13 @@ router.get('/home', withAuth, async (req,res) => {
             for_group: null
           }
         });
-        const dbGroupData = await Groups.findAll();
+        const dbUserGroupData = await UserGroups.findAll({
+          where: {
+            user: req.session.user_id
+          }
+        });
+        
+        
         const dbFriendsData = await Friends.findAll({
             where: {
                 user: req.session.user_id
@@ -54,7 +60,7 @@ router.get('/home', withAuth, async (req,res) => {
         const array = dbTimelineData.map((result) =>
         result.get({ plain: true })
         );
-        const groups = dbGroupData.map(group => group.get({ plain: true }));
+        const groups = dbUserGroupData.map(group => group.get({ plain: true }));
 
         const posts = []
         for(let i = 0; i < 10; i++) {
@@ -209,10 +215,17 @@ router.get('/user/:username', async (req,res) => {
     groupId = groupId.replace('g', '')
     
 
-    const findGroup = await Groups.findAll({
+    const findUserGroup = await UserGroups.findAll({
       raw: true,
       where: {
         id: parseInt(groupId)
+      }
+    })
+    if(findUserGroup) {
+    const findGroup = await Groups.findAll({
+      raw: true,
+      where: {
+        group_name: findUserGroup[0].group_name
       }
     })
     const { group_name } = findGroup[0]
@@ -222,16 +235,16 @@ router.get('/user/:username', async (req,res) => {
         for_group: group_name
       }
     });
-
-  
     const posts = dbUserData.map((result) =>
     result.get({ plain: true })
+    
   );
-
-    console.log(group_name)
-    res.render('grouppage', 
-    {posts, group_name},
-    ); 
+  
+  console.log(group_name)
+  res.render('grouppage', 
+  {posts, group_name},
+  ); 
+  }
   } else {
     res.redirect('/home')
   }
