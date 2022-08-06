@@ -1,4 +1,8 @@
 
 <li id={{group_name}} class="box1 groupName group-target">
 <p class="groupLink">{{group_name}}</p>
-<span class="groupMembers">Owner: {{ownedBy}}</span></li>
+<span class="groupMembers">Owner: {{ownedBy}}</span>
+{{#if is_paid}}
+<span class="groupMembers">Costs: {{cost}}</span>
+{{/if}}
+</li>

@@ -12,9 +12,9 @@ if (typeof web3 !== 'undefined') {
 }
 
 async function routeToFriend (friendName) {
-  let response = await fetch(`/home/${friendName}`);
+  let response = await fetch(`/user/${friendName}`);
   if (response.ok) {
-    window.location.href = `/home/${friendName}`
+    window.location.href = `/user/${friendName}`
   } else {
     alert('Failed to log in please try again')
   }
@@ -150,7 +150,7 @@ async function findGroup(e) {
   
   if(groupName) {
     e.preventDefault()
-    window.location.href = `/search/${groupName}`
+    window.location.href = `/home/${groupName}`
 }
 }
 
