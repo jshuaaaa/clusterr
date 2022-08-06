@@ -10,7 +10,7 @@ if (typeof web3 !== 'undefined') {
 } else {
   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 }
-
+debugger;
 async function routeToFriend (friendName) {
   let response = await fetch(`/home/${friendName}`);
   if (response.ok) {
@@ -150,7 +150,7 @@ async function findGroup(e) {
   
   if(groupName) {
     e.preventDefault()
-    window.location.href = `/search/${groupName}`
+    window.location.href = `/home/${groupName}`
 }
 }
 

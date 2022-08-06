@@ -52,13 +52,13 @@ router.post('/comment', async (req,res) => {
     
     const thisPost = await Posts.findOne({
         where: {
-          id: req.session.post_id,
+          id: req.body.id,
         },
       })
 
       const newPost = req.body
       const postCreation = await Comment.create({
-          on_post: req.session.post_id,
+          on_post: req.body.id,
           comment_by: req.session.user_id,
           comment_content: req.body.commentContent,
       })
