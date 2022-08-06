@@ -1,4 +1,4 @@
-const {Posts, Friends} = require('../models');
+const {Posts, Friends, UserGroups} = require('../models');
 const {Comment} = require('../models');
 const { Groups } = require('../models/index');
 const router = require('express').Router();
@@ -30,7 +30,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
     }
 })
 
-router.get('/home', withAuth, async (req,res) => {
+router.get('/home',  async (req,res) => {
     try {
         const user = req.session.user_id
         console.log(req.session.address)
@@ -39,7 +39,13 @@ router.get('/home', withAuth, async (req,res) => {
             for_group: null
           }
         });
-        const dbGroupData = await Groups.findAll();
+        const dbUserGroupData = await UserGroups.findAll({
+          where: {
+            user: req.session.user_id
+          }
+        });
+        
+        
         const dbFriendsData = await Friends.findAll({
             where: {
                 user: req.session.user_id
@@ -54,7 +60,7 @@ router.get('/home', withAuth, async (req,res) => {
         const array = dbTimelineData.map((result) =>
         result.get({ plain: true })
         );
-        const groups = dbGroupData.map(group => group.get({ plain: true }));
+        const groups = dbUserGroupData.map(group => group.get({ plain: true }));
 
         const posts = []
         for(let i = 0; i < 10; i++) {
@@ -175,6 +181,13 @@ router.get('/user/:username', async (req,res) => {
 
   router.get('/groups/:username', async (req,res) => {
     const groupId = req.params.username
+    const checkUser = await UserGroups.findAll({
+      where: {
+        user: req.session.user_id,
+        group_name: req.params.username
+      }
+    });
+    if(checkUser.length > 0) {
     const dbUserData = await Posts.findAll({
       where: {
         for_group: req.params.username
@@ -186,13 +199,56 @@ router.get('/user/:username', async (req,res) => {
     result.get({ plain: true })
   );
     
-  
     res.render('grouppage', 
     {posts, groupId},
     );
+  } else {
+    res.redirect('/home')
+  }
 
   })
 
+
+
+  router.get('/home/groups/:id', async (req,res) => {
+    let groupId = req.params.id
+    groupId = groupId.replace('g', '')
+    
+
+    const findUserGroup = await UserGroups.findAll({
+      raw: true,
+      where: {
+        id: parseInt(groupId)
+      }
+    })
+    if(findUserGroup) {
+    const findGroup = await Groups.findAll({
+      raw: true,
+      where: {
+        group_name: findUserGroup[0].group_name
+      }
+    })
+    const { group_name } = findGroup[0]
+    if(findGroup) {
+    const dbUserData = await Posts.findAll({
+      where: {
+        for_group: group_name
+      }
+    });
+    const posts = dbUserData.map((result) =>
+    result.get({ plain: true })
+    
+  );
+  
+  console.log(group_name)
+  res.render('grouppage', 
+  {posts, group_name},
+  ); 
+  }
+  } else {
+    res.redirect('/home')
+  }
+  })
 
 
 module.exports = router;
