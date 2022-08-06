@@ -57,9 +57,11 @@ router.get('/home', withAuth, async (req,res) => {
         const groups = dbGroupData.map(group => group.get({ plain: true }));
 
         const posts = []
-        for(let i =0; i<10; i++) {
-           let post =  array[Math.floor(Math.random() * array.length)]
-            posts.push(post)
+        for(let i = 0; i < 10; i++) {
+          let post =  array[Math.floor(Math.random() * array.length)];
+          if (!posts.includes(post)) {
+            posts.push(post);
+          }
         }
         res.render('home', 
           {posts, groups, friends, user},

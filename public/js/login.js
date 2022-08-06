@@ -57,3 +57,8 @@ document.getElementById("metamask").addEventListener('click', async function(e){
     alert("Please enter a username to display on your profile!")
 }
 })
+
+document.getElementById('signup').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = '/signup';
+});
