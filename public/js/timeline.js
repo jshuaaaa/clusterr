@@ -52,9 +52,10 @@ let url = window.location.href
 url = url.split('/')
 console.log(url)
 async function getGroupPost(e) {
+
+    e.preventDefault()
     let id = e.target.parentElement.id
-
-
+      
     if(id === "groupsList") {
         id = e.target.id
         console.log(id)

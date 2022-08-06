@@ -104,6 +104,7 @@ async function createGroup(e) {
   const cost = document.getElementById('cost').value.trim()
   
   if(groupName) {
+    e.preventDefault()
     let isPaid = false
     if(paid.checked) {
       isPaid = true
@@ -121,7 +122,6 @@ const addGroupUser = await fetch('/api/users/add-group', {
 })
 console.log('done')
   } else {
-    e.preventDefault()
     alert("Please submit a group name")
   }
 }
@@ -193,10 +193,4 @@ function getFriends() {
 
   return friendList;
 }
-
-
-const user = document.getElementById('user').textContent
-document.getElementById('user').addEventListener('click', function(){
-  window.location.href = `/user/${user}`
-})
 
