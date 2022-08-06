@@ -10,11 +10,11 @@ if (typeof web3 !== 'undefined') {
 } else {
   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 }
-debugger;
+
 async function routeToFriend (friendName) {
-  let response = await fetch(`/home/${friendName}`);
+  let response = await fetch(`/user/${friendName}`);
   if (response.ok) {
-    window.location.href = `/home/${friendName}`
+    window.location.href = `/user/${friendName}`
   } else {
     alert('Failed to log in please try again')
   }

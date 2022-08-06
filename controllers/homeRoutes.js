@@ -149,7 +149,7 @@ router.get('/post/:id', async (req,res) => {
 
 })
 
-router.get('/home/:username', async (req,res) => {
+router.get('/user/:username', async (req,res) => {
     const username = req.params.username
     const dbUserData = await Posts.findAll({
       where: {

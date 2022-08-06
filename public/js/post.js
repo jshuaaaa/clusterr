@@ -31,5 +31,5 @@ async function postComment(event) {
     user = user.textContent
 
     document.getElementById('user').addEventListener('click', function(){
-            window.location.href = `/home/${user}`
+            window.location.href = `/user/${user}`
     })
