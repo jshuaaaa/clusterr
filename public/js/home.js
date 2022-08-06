@@ -151,10 +151,40 @@ async function findGroup(e) {
   if(groupName) {
     e.preventDefault()
     window.location.href = `/home/${groupName}`
+  }
 }
+
+document.getElementById('submit-search-friend').addEventListener("click", findFriend)
+
+
+async function findFriend(e) {
+  const friendName = document.getElementById('search-friend').value.trim()
+  let friends = getFriends();
+  if(friends.includes(friendName)) {
+    e.preventDefault()
+    window.location.href = `/user/${friendName}`
+  } else {
+    alert('This user is not in your friend list');
+  }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  
+  $( "#search-friend" ).autocomplete({
+    source: getFriends()
+  });
+});
+
+function getFriends() {
+  let friends = document.getElementById('friendList').children;
+  let friendList = [];
 
 
+  for (let i = 0; i < friends.length; i++) {
+    friendList.push(friends[i].id);
+  }
+
+  return friendList;
+}
 
 

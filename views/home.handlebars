@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
@@ -100,6 +101,10 @@
         <button class="js-modal-trigger" data-target="modal-js-test">
             Add Friend
         </button>
+        
+        <input autocomplete="on" type="text" placeholder="Search for friend name"id="search-friend">
+        <button id="submit-search-friend">Search</button>
+
         <div id="modal-js-test" class="modal">
             <div class="modal-background"></div>
 
@@ -121,7 +126,8 @@
             </ul>
     </section>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="/js/timeline.js"></script>
 <script src="/js/home.js"></script>
 <script src="/js/logout.js"></script>
