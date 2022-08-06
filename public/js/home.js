@@ -2,7 +2,14 @@ var groupBackBtn = document.getElementById("backGroups");
 var backTimeLineBtn = document.getElementById("backTimeline")
 var themeBtn = document.querySelector(".themeSelector")
 var homeSecs = document.querySelectorAll('.homeSections')
+
+
 let buttonStatus = true;
+
+
+
+  
+
 
 if (typeof web3 !== 'undefined') {
   web3 = new Web3(ethereum);
@@ -186,5 +193,4 @@ function getFriends() {
 
   return friendList;
 }
-
 
