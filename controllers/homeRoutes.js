@@ -32,7 +32,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
 
 router.get('/home', withAuth, async (req,res) => {
     try {
-
+        const user = req.session.user_id
         console.log(req.session.address)
         const dbTimelineData = await Posts.findAll({
           where: {
@@ -62,7 +62,7 @@ router.get('/home', withAuth, async (req,res) => {
             posts.push(post)
         }
         res.render('home', 
-          {posts, groups, friends},
+          {posts, groups, friends, user},
         );
       } catch (err) {
         console.log(err);
@@ -73,6 +73,7 @@ router.get('/home', withAuth, async (req,res) => {
 
     router.get('/home/:groupname', withAuth, async (req, res) => {
       try {
+        const user = req.session.user_id
         console.log(req.params.groupname)
         const dbTimelineData = await Posts.findAll({
           where: {
@@ -110,7 +111,7 @@ router.get('/home', withAuth, async (req,res) => {
         });
         const searchGroups = newGroup.map(group => group.get({ plain: true }));
         
-        res.render('home',{posts, searchGroups, friends})
+        res.render('home',{posts, searchGroups, friends, user})
       } catch (err) {
         res.status(400).json({ message: 'Group name must be unique' });
       }
