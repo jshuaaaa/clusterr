@@ -17,7 +17,7 @@
             
             <li class="userProfileNav">
             <div class="userProfile" id="user-profile">
-                <img class="profileImg" id="profileImage" src="../img/Ninja.png" alt="">
+                <img class="profileImg" id="profileImage" src="../img/mando.png" alt="">
                 <button class="bn5 userDirectProfile" id="user">{{user}}</button>
               
     
@@ -35,36 +35,39 @@
 <div id="sectionContainer" class="sectionContainer">
     <section class="homeSections  sideSections sectionLeft">
         <button type="button" class="groupBackBtn hidden" id="backGroups">BACK</button>
-        <h1><i class="js-modal-trigger groupAdd fa-solid fa-square-plus" data-target="modal-js-example"></i>Groups<i class="js-modal-trigger magGlass fa-solid fa-magnifying-glass" data-target="modal-js-example2"></i></h1>
+        <h1><i class="hoverSearchGroup js-modal-trigger groupAdd fa-solid fa-square-plus" title="Create a Group!" data-target="modal-js-example"></i>Groups<i class="hoverAddGroups js-modal-trigger magGlass fa-solid fa-magnifying-glass" title=" Search for a Group!" data-target="modal-js-example2"></i></h1>
         
         <div id="modal-js-example" class="modal">
-  <div class="modal-background"></div>
+  <img class="modalBackgroundImage" src="../img/ModBG2.png">
 
-  <div class="modal-content">
-    <div class="box">
+   <div class="">
+    <div class="postModBox">
+      <button id="closeBtn" class="delete modal-close is-large" aria-label="close"></button>
       <h1>Create Group</h1>
       <input id="group-name" placeholder="Name of Group" type="text">
       <input id="paid"  title="Would you like a paid group? (ONLY FOR METAMASK USERS)" type="checkbox">
       <input id="cost" placeholder="How much does you group cost to join? (In ETH)" type="text">
-      <button id="create-group">Create Group</button>
+     
     </div>
+     <button class="bn5 modSub createGroup" id="create-group">Create Group</button>
   </div>
 
-  <button class="modal-close is-large" aria-label="close"></button>
+  
 </div>
 
 <div id="modal-js-example2" class="modal">
-  <div class="modal-background"></div>
+  <img class="modalBackgroundImage" src="../img/ModBG2.png">
 
-  <div class="modal-content">
-    <div class="box">
+  <div class="">
+    <div class="postModBox">
+      <button id="closeBtn" class="delete modal-close is-large" aria-label="close"></button>
       <h1>SEARCH GROUP</h1>
       <input type="text" placeholder="Search for groups to join!"id="search-group">
-            <button id="submit-search-group">SUBMIT</button>
+           
     </div>
+     <button class="bn5 modSub" id="submit-search-group">SUBMIT</button>
   </div>
 
-  <button class="modal-close is-large" aria-label="close"></button>
 </div>
 
 
@@ -105,16 +108,21 @@
     {{!-- <input   class="postBox" type="text" id="post"> --}}
     <a class="bn5 js-modal-trigger" data-target="modal-js-example3"><button class="hid" role="button"></button>POST</a>
     </div>
-    <div id="modal-js-example3" class="modal">
-  
+    <div id="modal-js-example3" class=" modal">
+  <img class="modalBackgroundImage" src="../img/ModBG2.png">
 
-  <div class="modal-content">
-    <div class="box">
+  <div  class="">
+    
+    <div class="postModBox">
+      <button id="closeBtn" class="delete modal-close is-large" aria-label="close"></button>
       <h1>MAKE A POST</h1>
       <input id="post" placeholder="Type anything!" type="text">
-      <button id="post-timeline">POST</button>
+      
     </div>
+    <button class="bn5" id="post-timeline">POST</button>
+    
   </div>
+ 
     </div>
         <div id="timeline">
     {{#each posts as |post|}}
@@ -127,31 +135,36 @@
         
         
            
+            
         <div id="modal-js-test" class="modal">
-            <div class="modal-background"></div>
-
-            <div class="modal-content">
-                <div class="box">
+          <img class="modalBackgroundImage" src="../img/ModBG2.png">
+            <div class="">
+                <div class="postModBox">
+                  <button id="closeBtn" class="delete modal-close is-large" aria-label="close"></button>
                     <h1>Add Friend</h1>
-                    <input id="friendName" placeholder="Enter friend name" type="text">
-                    <button id="add-friend">Add Friend</button>
+                    <input id="friendName" placeholder="Enter a Username" type="text">
+                    
                 </div>
+                <button class="bn5 modSub" id="add-friend" >Add Friend</button>
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
+            
         </div>
-        <div id="modal-js-run" class="modal">
-            <div class="modal-background"></div>
-
-            <div class="modal-content">
-                <div class="box">
-                    <input autocomplete="on" type="text" placeholder="Search for friend name"id="search-friend">
-        <button id="submit-search-friend">Search</button>
+          <div id="modal-js-run" class="modal">
+          <img class="modalBackgroundImage" src="../img/ModBG2.png">
+            <div class="">
+                <div class="postModBox">
+                  <button id="closeBtn" class="delete modal-close is-large" aria-label="close"></button>
+                    <h1>Look up any user!</h1>
+                    <input id="search-friend" placeholder="Enter a Username" type="text">
+                    
                 </div>
+                <button class="bn5 modSub" id="submit-search-friend">Search</button>
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
+            
         </div>
+       
 
-        <h1><i class="addFriendBtn fa-solid fa-user-plus js-modal-trigger" data-target="modal-js-test"></i>Friends<i class="lookFriendBtn fa-solid fa-magnifying-glass js-modal-trigger" data-target="modal-js-run"></i></h1>
+        <h1><i class="hoverAddFriends addFriendBtn fa-solid fa-user-plus js-modal-trigger" data-target="modal-js-test" title="Add a new friend!"></i>Friends<i title="Search for User!" class="hoverSearchFriends lookFriendBtn fa-solid fa-magnifying-glass js-modal-trigger" data-target="modal-js-run"></i></h1>
             <ul id="friendList">
                 {{#each friends as |friend|}}
                 {{> friends}}
@@ -159,6 +172,7 @@
             </ul>
     </section>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="/js/timeline.js"></script>

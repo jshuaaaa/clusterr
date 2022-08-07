@@ -18,7 +18,7 @@ const postData = [
     post_content: 'You have to try some tonkatsu ramen!'
   },
   {
-    posted_by: 'Monkey D. Luffy',
+    posted_by: 'MonkeyDLuffy',
     post_content: 'I will be the king of pirates!!'
   },
   {

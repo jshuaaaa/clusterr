@@ -12,6 +12,7 @@ async function postToTimeline(event) {
             headers: { 'Content-Type': 'application/json' },
     })
     if (post.ok) {
+       
         window.location.href = '/home'
     } else {
         alert('Failed to log in please try again')
