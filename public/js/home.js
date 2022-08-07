@@ -6,9 +6,22 @@ var homeSecs = document.querySelectorAll('.homeSections')
 
 let buttonStatus = true;
 
+  $("#create-group").click(function () {
+    setTimeout(function () {
+      
+      location.reload(true);
+    }, 200);
+    });
 
+    $("#add-friend").click(function () {
+      setTimeout(function () {
+        
+        location.reload(true);
+      }, 200);
+      });
 
   
+
 
 
 if (typeof web3 !== 'undefined') {
