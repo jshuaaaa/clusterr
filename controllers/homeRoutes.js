@@ -152,8 +152,7 @@ router.get('/post/:id', async (req,res) => {
           }
         }
 
-          const dbCommentData = await Comment.findAll({
-      raw: true,
+      const dbCommentData = await Comment.findAll({
       where: {
           on_post: req.params.id
         },
