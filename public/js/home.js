@@ -194,3 +194,7 @@ function getFriends() {
   return friendList;
 }
 
+const user = document.getElementById('user').textContent
+document.getElementById('user').addEventListener('click', function(){
+  window.location.href = `/user/${user}`
+})
