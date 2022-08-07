@@ -17,6 +17,7 @@ async function postComment(event) {
             headers: { 'Content-Type': 'application/json' },
     })
     if (comment.ok) {
+        location.reload()
         console.log('success')
     } else {
         event.preventDefault(event)
