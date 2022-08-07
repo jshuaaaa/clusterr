@@ -126,35 +126,54 @@ router.get('/home',withAuth,  async (req,res) => {
     });
 
 
+
+
 router.get('/post/:id', async (req,res) => {
-    try {
-        const dbTimelineData = await Posts.findAll({
-        });
-
-            const dbCommentData = await Comment.findAll({
+  try {
+      const dbTimelineData = await Posts.findOne({
+        raw: true,
         where: {
-            on_post: req.params.id
-          },
-    });
+          id: req.params.id
+        }
+      });
+      console.log(dbTimelineData)
 
-    const   comments = dbCommentData.map((result) =>
-    result.get({ plain: true })
+      if(dbTimelineData.for_group != null) {
+          const groupFinder = await UserGroups.findAll({
+            raw: true,
+            where: {
+              group_name: dbTimelineData.for_group,
+              user: req.session.user_id
+            }
+          })
+
+          if(groupFinder.length === 0) {
+            res.redirect('/home')
+          }
+        }
+
+          const dbCommentData = await Comment.findAll({
+      raw: true,
+      where: {
+          on_post: req.params.id
+        },
+  });
+
+  const   comments = dbCommentData.map((result) =>
+  result.get({ plain: true })
 );
 
+      const { posted_by, post_content } = dbTimelineData
+      req.session.save(()=> {
+          req.session.post_id = req.params.id
+      })
 
-        const array = dbTimelineData.map((result) =>
-        result.get({ plain: true })
-    );
-        const { posted_by, post_content } = array[req.params.id - 1]
-        req.session.save(()=> {
-            req.session.post_id = req.params.id
-        })
-
-        res.render('post',{posted_by, post_content,comments} );
-    } catch (err) {
-        console.log(err)
-        res.status(400).json(err);
-    }
+      res.render('post',{posted_by, post_content,comments} );
+    
+  } catch (err) {
+      console.log(err)
+      res.status(400).json(err);
+  }
 
 })
 
