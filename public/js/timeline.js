@@ -52,19 +52,21 @@ let url = window.location.href
 url = url.split('/')
 console.log(url)
 async function getGroupPost(e) {
-
+    console.log('call')
     e.preventDefault()
     let id = e.target.parentElement.id
+    console.log(id)
       
-    if(id === "groupsList") {
+    if(id === "groupList") {
+        console.log('call')
         id = e.target.id
         console.log(id)
     }
-    if(url.length === 4) {
     if(id !== "") {
-    window.location.href = `home/groups/${id}`
+        console.log('call')
+    window.location.href = `/home/groups/${id}`
     }
-} else {
+ else {
     e.preventDefault()
 }
 }

@@ -43,14 +43,8 @@ router.post('/signup', async (req, res) => {
       metamask: req.body.metamask,
       address: req.body.account
     });
-
-    req.session.save(() => {
-      req.session.user_id = req.body.username;
-      req.session.logged_in = true;
-      res.status(201).json(newUser);
-    });
-
-    res.render('home');
+    res.status(201).json(newUser);
+    res.render('home')
   } catch (err) {
     res.status(500).json(err);
   }

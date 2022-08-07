@@ -65,9 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  let url = window.location.href
-  url = url.split('/')
-  const groupName = url[url.length - 1]
+
+  const groupName = document.getElementById('group').textContent
 
   console.log(groupName)
   document.getElementById("post-timeline").addEventListener("click", async function(event) {
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Content-Type': 'application/json' },
     })
     if (post.ok) {
-        window.location.href = '/home'
+      location.reload();
     } else {
         alert('Failed to log in please try again')
     }
