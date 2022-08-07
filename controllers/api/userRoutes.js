@@ -122,7 +122,7 @@ router.post('/add-group-user', async (req, res) => {
     const findGroup = await Groups.findOne({
       where: {
         group_name: req.body.group,
-        owned_by: req.body.owner
+        ownedBy: req.body.owner
       }
     })
 

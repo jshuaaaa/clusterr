@@ -30,7 +30,7 @@ router.get('/signup', isLoggedIn, async (req,res) => {
     }
 })
 
-router.get('/home',  async (req,res) => {
+router.get('/home',withAuth,  async (req,res) => {
     try {
         const user = req.session.user_id
         console.log(req.session.address)
