@@ -5,6 +5,10 @@ const router = require('express').Router();
 router.post('/create', async (req, res) => {
   try {
     console.log(req.session.address)
+    if(!req.session.address && req.body.isPaid || req.body.cost > 0) {
+      res.status(400).json({message: "Must be a metamask user for this!"})
+      return
+    }
     const newGroup = await Groups.create({
       group_name: req.body.groupName,
       is_paid: req.body.isPaid,
@@ -13,7 +17,6 @@ router.post('/create', async (req, res) => {
     });
     res.status(201).json(newGroup);
   } catch (err) {
-    res.status(400).json({ message: 'Group name must be unique' });
   }
 });
 
