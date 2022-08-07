@@ -18,3 +18,14 @@ async function getPost(e) {
 document.getElementById('home').addEventListener('click', function(){
     window.location.href = '/home'
 })
+
+document.getElementById('add-friend').addEventListener('click', addFriend)
+const friend = document.getElementById('user').textContent
+
+async function addFriend() {
+    const response = await fetch('/api/users/friends', {
+        method: 'POST',
+        body: JSON.stringify({ friend }),
+        headers: { 'Content-Type': 'application/json' },
+      })
+}
