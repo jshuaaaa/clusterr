@@ -4,13 +4,13 @@
      <button id="home">Home</button>
      <h1>Cluster</h1>
      <button id="add-friend">Add Friend</button>
-    <img class="logo" src="/img/clusterlogo.png">
+    {{!-- <img class="logo" src="/img/clusterlogo.png"> --}}
  
 </header>
 <section class="card user">
-    <h1 id="user">{{username}}</h1>
+    {{!-- <h1 id="user">{{username}}</h1> --}}
 
-<h3>{{username}}'s Posts!</h3>
+<h3>{{username}}'s Posts</h3>
 
     {{#each posts as |post|}}
     {{> user-posts}}
