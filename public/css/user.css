@@ -106,8 +106,16 @@ h3:hover{
   #home {
     height: 100px;
     width: 100px;
-    margin-left: 50px;
   }
+
+
+#home:hover {
+  animation:heart 1.25s linear infinite
+}
+@keyframes heart{
+    from{transform:scale(1)}10%{transform:scale(1.2)}
+}
+
 
 .card{
   color: rgba(84, 77, 84, 0.845);
