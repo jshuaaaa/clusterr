@@ -30,11 +30,12 @@
 {{/if}}
 
 
-  </div>
-</section>
+{{#each members as |member|}}
+{{> groupmembers}}
+{{/each}}
 
-<button class="makePB bn5 js-modal-trigger" data-target="modal-js-example">
-  
+<button class="bn5 js-modal-trigger" data-target="modal-js-example">
+
   Create a Post for this group!
 </button>
 
