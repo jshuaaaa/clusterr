@@ -24,6 +24,10 @@
 <h3>{{groupId}} Posts!</h3>
 {{/if}}
 
+{{#each members as |member|}}
+{{> groupmembers}}
+{{/each}}
+
 <button class="bn5 js-modal-trigger" data-target="modal-js-example">
   Create a Post for this group!
 </button>

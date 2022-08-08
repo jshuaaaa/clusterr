@@ -14,10 +14,23 @@
     </div>
   </a>
 
-<input id="comment-data" type="text" placeholder="Comment on {{posted_by}}'s post" 
-
-<button id="comment">Submit</button>
+<button class="bn5 js-modal-trigger" data-target="modal-js-example">Comment</button>
   </section>
+  
+
+
+       <div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+<input id="comment-data" type="text" placeholder="Comment on {{posted_by}}'s post">
+    <a class="bn5"><button class="hid" role="button" id="comment">COMMENT</button></a>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 <section class="comments">
     {{#each comments as |comment|}}
      <br> 
