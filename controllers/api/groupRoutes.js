@@ -11,7 +11,7 @@ router.post('/create', async (req, res) => {
       }
     })
     console.log(findUser.address)
-    if(!findUser.address) {
+    if(findUser.address === null) {
       console.log(findUser.address)
       console.log(req.body.isPaid)
       console.log(req.body.cost)
