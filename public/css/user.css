@@ -142,3 +142,17 @@ header:hover{
 
   
 }
+
+.user{
+  display: flex;
+  flex-wrap: wrap;
+ flex-direction: column;
+  row-gap: 5vh;
+  max-height: max-content;
+}
+
+.user > h3{
+  text-align: start;
+  flex: 1 1 50%;
+}
+
