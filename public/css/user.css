@@ -173,3 +173,14 @@ header:hover{
   
 }
 
+
+.user{
+  display: flex;
+  flex-wrap: wrap;
+ flex-direction: column;
+  row-gap: 5vh;
+  max-height: max-content;
+}
+
+
+
