@@ -178,20 +178,24 @@ router.get('/post/:id', async (req,res) => {
 
 router.get('/user/:username', async (req,res) => {
     const username = req.params.username
+    let current = true;
     const dbUserData = await Posts.findAll({
       where: {
         posted_by: req.params.username
       }
     });
 
-  
+    if (req.session.user_id === username) {
+      current = false;
+    }
+
     const posts = dbUserData.map((result) =>
     result.get({ plain: true })
   );
     
   
     res.render('user', 
-    {posts, username},
+    {posts, username, current},
     );
 
   })
