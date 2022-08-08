@@ -62,7 +62,7 @@ h3{
 }
 
 
-#home{
+/* #home{
     display: inline-block;
     width: 70px;
     height: 38px;
@@ -84,12 +84,11 @@ h3{
     cursor: pointer;
     transition: ease-out 0.3s;
     box-shadow: inset 0 0 0 0 #2993bc;  
-}
+} */
 
-#home:hover {
-    box-shadow: inset 70px 0 0 0 #2993bc;
-    width: 200px;
-  }
+/* #home:hover {
+    width: 130px;
+  } */
 
 .card{
   color: rgba(84, 77, 84, 0.845);
@@ -116,7 +115,9 @@ h3{
 @keyframes heart{
   from{transform:scale(1)}10%{transform:scale(1.2)}
 }
-
+#home {
+  
+}
 
 #nav_header{
   display: flex;
