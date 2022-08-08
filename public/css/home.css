@@ -63,22 +63,23 @@ body {
   height: 8vh;
 }
 .userProfile {
+  
   padding-right: 2%;
-  font-size: 1.1em;
- max-width: 55%;
+  font-size: 1.5em;
+ max-width: fit-content;
   display: flex;
-  height: 100%;
-  justify-content: center;
-  flex-wrap: wrap;
+  height: max-content;
+ justify-content: center;
+  flex-wrap: nowrap;
   margin-left: 10%;
   margin-top: 15%;
- overflow: scroll;
+ align-items: center  ;
   border: 1px solid rgb(79, 216, 243);
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   border-radius: 8px;
   cursor: pointer;
-  transform: skew(2deg, 2deg);
+  transform: skew(2deg, 2deg) ;
 
   text-align: center;
   box-shadow: rgb(0, 0, 0) -5px 5px, rgb(0, 0, 0) -10px 10px,
@@ -91,13 +92,17 @@ body {
   background-color: rgba(225, 225, 225, 0.161);
 }
 .userDirectProfile {
-  flex: 1 1 50%;
+  display: flex;
+  flex: 1 1 auto;
   position: relative;
   font-size: .4em;
-  max-height: 7vh;
-  margin-top: 35px;
-  margin-left: 2.5%;
-  overflow:hidden;
+  max-height: 8vh;
+   padding: 0% !important;
+   align-items: center;
+  
+ 
+  overflow: visible;
+  text-align: center !important;
 }
 
 .centerBox {
@@ -110,10 +115,12 @@ body {
 }
 .profileImg {
   position: relative;
-  height: 14vh;
-  max-width: 9vw;
-  max-height: 58.5vh;
-
+  
+  flex: 1 1 auto;
+  max-height: 12vh;
+  height: 12vh;
+ 
+;
   z-index: 0;
 }
 
