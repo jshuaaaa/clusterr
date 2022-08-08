@@ -74,7 +74,7 @@ h3:hover{
 @keyframes heart{
     from{transform:scale(1)}10%{transform:scale(1.2)}
 } */
-#home{
+/* #home{
   display: inline-block;
   width: 70px;
   height: 38px;
@@ -101,7 +101,21 @@ h3:hover{
 #home:hover {
   box-shadow: inset 70px 0 0 0 #2993bc;
   width: 200px;
+  } */
+
+  #home {
+    height: 100px;
+    width: 100px;
   }
+
+
+#home:hover {
+  animation:heart 1.25s linear infinite
+}
+@keyframes heart{
+    from{transform:scale(1)}10%{transform:scale(1.2)}
+}
+
 
 .card{
   color: rgba(84, 77, 84, 0.845);
@@ -148,7 +162,7 @@ header:hover{
     color: #87a4b0;
 }
 
-#add-friend{
+/* #add-friend{
   display: inline-block;
   width: 102px;
   height: 38px;
@@ -176,6 +190,11 @@ header:hover{
 #add-friend:hover{
   box-shadow: inset 120px 0 0 0 #b630b6;
     width: 120px;
+} */
+
+
+#add-friend {
+  margin-right: 50px;
 }
 
 

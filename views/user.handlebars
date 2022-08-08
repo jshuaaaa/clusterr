@@ -1,21 +1,22 @@
 <link rel="stylesheet" href="/css/user.css">
 <header id="nav_header">
 
-     <button id="home">Home</button>
+     <img src="/img/clusterlogo.png" id="home">
      <h1>Cluster</h1>
      {{#if current}}
-     <button id="add-friend">Add Friend</button>
+     <i id="add-friend" class="fa-solid fa-user-plus"></i>
     {{!-- <img class="logo" src="/img/clusterlogo.png"> --}}
     {{/if}}
  
 </header>
 <section class="card user">
-{{!-- <h1 id="user">{{username}}</h1> --}}
 
-<h3>{{username}}'s Posts</h3>
+
+<h3><span id="user">{{username}}</span>'s Posts</h3>
 
     {{#each posts as |post|}}
     {{> user-posts}}
     {{/each}}
 </section>
 <script src="/js/user.js"></script>
+<script src="https://kit.fontawesome.com/941d116b7a.js" crossorigin="anonymous"></script>

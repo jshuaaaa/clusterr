@@ -122,6 +122,15 @@ async function createGroup(e) {
     if(paid.checked) {
       isPaid = true
     }
+    console.log(cost)
+    if(isPaid === true && !cost) {
+      
+        return alert("Paid groups need a cost")
+    }
+    if(isPaid === false && cost > 0) {
+      
+      return alert("Non paid groups cant cost anything!")
+    }
     const response = await fetch('/api/groups/create', {
       method: 'POST',
       body: JSON.stringify({ groupName, isPaid, cost}),
