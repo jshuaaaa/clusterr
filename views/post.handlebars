@@ -2,23 +2,23 @@
 <header id="nav_header">
 
      <button id="home">Home</button>
+     <h1>Cluster</h1>
     <img class="logo" src="/img/clusterlogo.png">
  
 </header>
-
-<section class="card post">
-  
-    <header id="user">{{posted_by}}</header>
+<section class="post card">
+ <header id="user">{{posted_by}}</header>
 
     <div class="card-body mt-3 is-8 is-variable has-text-centered">
-      <p>By: {{post_content}}</p>
+      <p> {{post_content}}</p>
     </div>
   </a>
-<input id="comment-data" type="text">
+  <input id="comment-data" type="text">
 <button id="comment">Submit</button>
-</section>
+  </section>
 <section class="comments">
     {{#each comments as |comment|}}
+     <br> 
     {{> comments}}
     {{/each}}
 </section>
