@@ -187,7 +187,7 @@ async function findUser(e) {
   
   const query = await fetch(`/user/${username}`);
 
-  if (query) {
+  if (query.ok) {
     window.location.href = `/user/${username}`;
     return;
   }
