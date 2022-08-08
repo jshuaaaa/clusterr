@@ -7,13 +7,15 @@
  
 </header>
 <section class="post card">
- <header id="user">{{posted_by}}:</header>
+ <header id="user">{{posted_by}}</header>
 
     <div class="card-body mt-3 is-8 is-variable has-text-centered">
       <p> {{post_content}}</p>
     </div>
   </a>
-  <input id="comment-data" type="text" placeholder="Comment">
+
+<input id="comment-data" type="text" placeholder="Comment on {{posted_by}}'s post" 
+
 <button id="comment">Submit</button>
   </section>
 <section class="comments">
