@@ -37,7 +37,7 @@ body {
     font-weight: bolder;
     margin-left: 1rem;
     padding: 5px;
-    font-size:2rem;
+    font-size:20px;
 }
 
 .card>header{
@@ -143,10 +143,9 @@ h3{
 
 
 #comment{
-    overflow: auto;
     display: inline-block;
-    width: 80px;
-    height: 40px;
+    width: 121px;
+    /* height: 40px; */
     border-radius: 8px;
     outline: none;
     border: none;
@@ -167,10 +166,84 @@ h3{
 
 #comment:hover{
    color: rgba(255, 255, 255, 1);
-    width: 100px;
+    width: 121px;
     background: #2993bc;
 }
 
+.box{
+  background-color: #252525;
+  font-family: "Raleway",sans-serif;
+}
+
+
+
+.bn5{
+  display: inline-block;
+  width: 121px;
+  height: 40px;
+  margin-left: 15px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background: #335b88;
+  background-size: 190%;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 15px;
+}
+
+.bn5:hover{
+  color: rgba(255, 255, 255, 1);
+    background: #2993bc;
+}
+
+
+#comment.hid{
+  display: inline-block;
+  width: 121px;
+  /* height: 40px; */
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background: #2993bc;
+  background-size: 190%;
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+
+}
+
+a.bn5{
+  display: inline-block;
+  width: 121px;
+  height: 40px;
+  margin-left: 15px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  background: #2993bc;
+  background-size: 190%;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 15px;
+}
 
 #comment-data{
     border-radius: 25px;
