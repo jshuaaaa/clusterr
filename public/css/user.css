@@ -180,7 +180,14 @@ header:hover{
  flex-direction: column;
   row-gap: 5vh;
   max-height: max-content;
+  text-align: center;
+  
 }
 
-
+.user > h3{
+  flex: 1 1 100%;
+  text-align: center;
+  font-size: 2em;
+  justify-content: center;
+}
 
