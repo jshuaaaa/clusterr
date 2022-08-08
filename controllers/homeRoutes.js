@@ -240,12 +240,15 @@ router.get('/user/:username', async (req,res) => {
       }
     })
     if(findUserGroup) {
+
     const findGroup = await Groups.findAll({
       raw: true,
       where: {
         group_name: findUserGroup[0].group_name
       }
     })
+    
+    
     const { group_name } = findGroup[0]
     if(findGroup) {
     const dbUserData = await Posts.findAll({
@@ -253,14 +256,24 @@ router.get('/user/:username', async (req,res) => {
         for_group: group_name
       }
     });
+    const findUsers = await UserGroups.findAll({
+      where: {
+        group_name: findUserGroup[0].group_name
+      }
+    })
     const posts = dbUserData.map((result) =>
     result.get({ plain: true })
     
   );
+
+  const members = findUsers.map((result) =>
+  result.get({ plain: true })
+  
+);
   
   console.log(group_name)
   res.render('grouppage', 
-  {posts, group_name},
+  {posts, group_name, members},
   ); 
   }
   } else {
