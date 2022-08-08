@@ -237,6 +237,7 @@ transition: all .5s ease-in;
   -webkit-backdrop-filter: blur(7.2px);
 }
 .sectionRight > h1 {
+  font-size: 1.8em;
   color: rgb(79, 216, 243);
   border-radius: 2px;
   transform: skew(-2deg, -2deg);
@@ -412,6 +413,7 @@ input#button:focus {
 } */
 
 #timeLine {
+  font-size: 1.4em;
   box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.419);
   display: flex;
   flex-wrap: wrap;
@@ -963,10 +965,7 @@ margin-left: 2.5%; */
   
   }
 
-  
-  .sectionLeft{
-    font-size: .8em;
-  }
+
 } 
 
   

@@ -8,10 +8,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/941d116b7a.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/post.css">
+<link rel="stylesheet" href="/css/group.css">
 <link rel="stylesheet" href="/css/user.css">
 
-<button class="bn5" id="home">Home</button>
 
+
+<button id="home">Home</button>
+<section class="card user groupHeader">
+ <div class="groupHeaderDiv">
 {{#if group_name}}
 <h1 id="group">{{group_name}}</h1>
 
@@ -24,13 +29,16 @@
 <h3>{{groupId}} Posts!</h3>
 {{/if}}
 
+
 {{#each members as |member|}}
 {{> groupmembers}}
 {{/each}}
 
 <button class="bn5 js-modal-trigger" data-target="modal-js-example">
+
   Create a Post for this group!
 </button>
+
         <div id="modal-js-example" class="modal">
   <div class="modal-background"></div>
 
@@ -44,10 +52,11 @@
 
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
-
+<section class="card user groupPagePost">
     {{#each posts as |post|}}
-    {{> groupposts}}
+    {{> groupposts }} 
+    
     {{/each}}
-
+</section>
 
 <script src="/js/group.js"></script>
