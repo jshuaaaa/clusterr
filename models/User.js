@@ -10,15 +10,10 @@ class Users extends Model {
 
 Users.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     username: {
       type: DataTypes.STRING,
-      unique: true
+      unique: true,
+      primaryKey: true
  },
     password: {
       type: DataTypes.STRING,

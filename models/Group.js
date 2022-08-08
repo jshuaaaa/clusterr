@@ -5,16 +5,11 @@ class Groups extends Model {}
 
 Groups.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
     group_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
+      primaryKey: true
     },
     is_paid: {
       type: DataTypes.BOOLEAN

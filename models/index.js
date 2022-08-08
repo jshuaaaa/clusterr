@@ -4,21 +4,48 @@ const Comment = require('./Comment');
 const Groups = require('./Group');
 const UserGroups = require('./UserGroups');
 const Friends = require('./Friends');
+const Comments = require('./Comment');
 
-Posts.belongsTo(Users);
+Posts.belongsTo(Users, {foreignKey: 'posted_by', targetKey: 'username'});
 
-Posts.belongsTo(Groups)
+Posts.belongsTo(Groups, {foreignKey: 'for_group', targetKey: 'group_name'})
 
-Users.hasMany(Posts);
+Posts.hasMany(Comments)
 
-Posts.hasMany(Comment);
+Comments.belongsTo(Posts, {foreignKey: 'on_post', targetKey: 'id'})
 
-Groups.hasMany(Posts)
+Comments.belongsTo(Users, {foreignKey: 'comment_by', targetKey: 'username'})
 
-UserGroups.hasMany(Users);
+Friends.hasMany(Users)
 
-UserGroups.hasMany(Groups);
+Groups.belongsTo(Users, {foreignKey: 'ownedBy', targetKey: 'username'})
 
-Friends.hasMany(Users);
+Groups.belongsTo(UserGroups, {foreignKey: 'group_name', targetKey: 'group_name'})
+
+UserGroups.hasMany(Users)
+
+UserGroups.hasMany(Groups)
+
+Users.hasMany(Posts)
+
+Users.hasMany(Comments)
+
+Users.hasMany(Groups)
+
+Users.belongsTo(Friends, {foreignKey: 'username', targetKey: 'user'})
+
+Users.belongsTo(Friends, {foreignKey: 'username', targetKey: 'friend'})
+
+
+
+// Users.hasMany(Posts);
+
+// Groups.hasMany(Posts)
+
+// UserGroups.hasMany(Users);
+
+// UserGroups.hasMany(Groups);
+
+// Friends.hasMany(Users);
 
 module.exports = { Users, Posts, Comment, Groups, UserGroups, Friends };
