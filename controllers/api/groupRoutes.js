@@ -11,12 +11,12 @@ router.post('/create', async (req, res) => {
       }
     })
     console.log(findUser.address)
-    if(findUser.address === null) {
+    if((findUser.address === null) && (req.body.isPaid)) {
       console.log(findUser.address)
       console.log(req.body.isPaid)
       console.log(req.body.cost)
       res.status(400).json({message: "Must be a metamask user for this!"})
-      // return
+      return;
     }
     const newGroup = await Groups.create({
       group_name: req.body.groupName,
@@ -26,6 +26,7 @@ router.post('/create', async (req, res) => {
     });
     res.status(201).json(newGroup);
   } catch (err) {
+    res.status(500).json(err);
   }
 });
 
