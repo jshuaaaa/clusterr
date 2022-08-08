@@ -28,4 +28,6 @@ async function addFriend() {
         body: JSON.stringify({ friend }),
         headers: { 'Content-Type': 'application/json' },
       })
+
+    alert(`You and ${friend} are now friends!`)
 }
