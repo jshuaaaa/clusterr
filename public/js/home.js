@@ -178,37 +178,21 @@ async function findGroup(e) {
   }
 }
 
-document.getElementById('submit-search-friend').addEventListener("click", findFriend)
+document.getElementById('submit-search-user').addEventListener("click", findUser)
 
 
-async function findFriend(e) {
-  const friendName = document.getElementById('search-friend').value.trim()
-  let friends = getFriends();
-  if(friends.includes(friendName)) {
-    e.preventDefault()
-    window.location.href = `/user/${friendName}`
-  } else {
-    alert('This user is not in your friend list');
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
+async function findUser(e) {
+  e.preventDefault();
+  const username = document.getElementById('search-user').value.trim()
   
-  $( "#search-friend" ).autocomplete({
-    source: getFriends()
-  });
-});
+  const query = await fetch(`/user/${username}`);
 
-function getFriends() {
-  let friends = document.getElementById('friendList').children;
-  let friendList = [];
-
-
-  for (let i = 0; i < friends.length; i++) {
-    friendList.push(friends[i].id);
+  if (query) {
+    window.location.href = `/user/${username}`;
+    return;
   }
 
-  return friendList;
+  alert('Could not find user');
 }
 
 const user = document.getElementById('user').textContent
