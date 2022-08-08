@@ -157,7 +157,7 @@ body {
   flex: 1 1 30%;
 }
 .homeSections > * {
-  font-size: 1.5em;
+  font-size: 1.8.0em;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
@@ -167,7 +167,7 @@ body {
 .homeSections > h1 {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  font-style: italic;
+  
   position: relative;
 margin-top: 20%;
 margin-bottom: -20%;
@@ -232,7 +232,7 @@ transition: all .5s ease-in;
     rgb(0, 0, 0) -15px 15px, rgba(10, 0, 0, 0.124) -20px 20px,
     rgba(0, 0, 0, 0.33) -25px 25px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 83, 255, 0.694);
+  border: 2.5px solid rgba(255, 83, 255, 0.694);
   background: rgba(176, 126, 247, 0.14);
   -webkit-backdrop-filter: blur(7.2px);
 }
@@ -241,7 +241,7 @@ transition: all .5s ease-in;
   border-radius: 2px;
   transform: skew(-2deg, -2deg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgb(79, 216, 243);
+  border: 2.5px solid rgb(79, 216, 243);
   background: rgba(176, 126, 247, 0.14);
   -webkit-backdrop-filter: blur(7.2px);
   box-shadow: rgb(0, 0, 0) 5px 5px 0px 0px, rgb(0, 0, 0) 10px 10px 0px 0px,
@@ -263,7 +263,7 @@ transition: all .5s ease-in;
 }
 
 .sectionLeft > ul > li {
-  border: 1px solid rgba(255, 83, 255, 0.409);
+  border: 2.5px solid rgba(255, 83, 255, 0.409);
   font-size: 2em;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -294,7 +294,7 @@ transition: all .5s ease-in;
 
 .sectionRight > ul > li {
   cursor: pointer;
-  border: 1px solid rgba(79, 216, 243, 0.48);
+  border: 2.5px solid rgba(79, 216, 243, 0.48);
   color: rgb(79, 216, 243);
   border-radius: 8px;
   transform: skew(-2deg, -2deg);
