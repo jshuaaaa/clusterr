@@ -1,4 +1,4 @@
-const {Posts, Friends, UserGroups} = require('../models');
+const {Posts, Friends, UserGroups, Users} = require('../models');
 const {Comment} = require('../models');
 const { Groups } = require('../models/index');
 const router = require('express').Router();
@@ -177,24 +177,37 @@ router.get('/post/:id', async (req,res) => {
 })
 
 router.get('/user/:username', async (req,res) => {
+  try {
     const username = req.params.username
-    const dbUserData = await Posts.findAll({
+    let current = true;
+    const dbUserData = await Users.findOne({ where: { username: username } });
+    const dbPostData = await Posts.findAll({
       where: {
         posted_by: req.params.username
       }
     });
 
-  
-    const posts = dbUserData.map((result) =>
-    result.get({ plain: true })
-  );
+    if (dbUserData) {
+      if ((req.session.user_id === username)) {
+        current = false;
+      }
+      
+      const posts = dbPostData.map((result) =>
+        result.get({ plain: true })
+      );
     
-  
-    res.render('user', 
-    {posts, username},
-    );
+      res.status(200).render('user', 
+      {posts, username, current},
+      );
 
-  })
+      return;
+    }
+
+    res.status(404).json({ message: 'Could not find user' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 
   router.get('/groups/:username', async (req,res) => {
