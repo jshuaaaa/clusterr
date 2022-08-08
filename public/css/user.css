@@ -63,7 +63,7 @@ h3:hover{
 
 
 
-.logo {
+/* .logo {
     width: 100px;
     cursor: pointer;
   }
@@ -73,7 +73,7 @@ h3:hover{
 }
 @keyframes heart{
     from{transform:scale(1)}10%{transform:scale(1.2)}
-}
+} */
 #home{
   display: inline-block;
   width: 70px;
@@ -150,17 +150,17 @@ header:hover{
 
 #add-friend{
   display: inline-block;
-  width: 70px;
+  width: 102px;
   height: 38px;
   border-radius: 25px;
   outline: none;
   border: none;
   background-image: linear-gradient(
     to right,
-    #c04ae4,
-    #b630b6,
-    #391239,
-    #66235a
+    #4a8de4,
+    #1e5eb2,
+    #2f2e2f,
+    #020202
   );
   background-size: 200%;
   font-size: 1rem;
@@ -173,6 +173,12 @@ header:hover{
   
 }
 
+#add-friend:hover{
+  box-shadow: inset 120px 0 0 0 #b630b6;
+    width: 120px;
+}
+
+
 
 .user{
   display: flex;
@@ -181,7 +187,7 @@ header:hover{
   row-gap: 5vh;
   max-height: max-content;
   text-align: center;
-  
+
 }
 
 .user > h3{
