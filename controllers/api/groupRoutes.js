@@ -16,14 +16,17 @@ router.post('/create', async (req, res) => {
       return
 
     }
+
+ 
     const newGroup = await Groups.create({
-      group_name: req.body.groupName,
+      group_name: req.body.group,
       is_paid: req.body.isPaid,
       cost: req.body.cost,
       ownedBy: req.session.user_id
     });
     res.status(201).json(newGroup);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
