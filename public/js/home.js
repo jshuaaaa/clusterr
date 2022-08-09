@@ -46,12 +46,6 @@ document.querySelectorAll(".friendName").forEach((friend) => {
     });
   });
 
-document.querySelectorAll(".user-groups").forEach((item) => {
-  item.addEventListener("click", (e) => {
-    let id = e.target.parentElement.id;
-    window.location.href = `/home/groups/${id}`
-  });
-});
 
 groupBackBtn.addEventListener("click", function () {
   groupBackBtn.style.display = "none";
