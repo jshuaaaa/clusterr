@@ -35,7 +35,7 @@
    
    padding-left: 20%  ;
     border-radius: 4%;
-    font-size: 1.8em;
+    font-size: 2.8em;
    margin: 20%;
    margin-right: 100px;
     
@@ -109,5 +109,39 @@
         justify-content: center;
         padding: 0%;
     }
+
+  #nav_header > img + h1{
+    margin-right: 5%;
+
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  #group{
+    font-size: 2.5em !important;
+    padding-right: 5%;
+    text-decoration: underline;
+    
+    
+  }
+
+  .groupHeaderDiv{
+    margin-top: 5%;
+  }
+
+  #post-timeline::before{
+    height: 0%;
+    font-size: 1em;
+    color: white !important;
+  }
+
+  #post-timeline{
+    height: 0%;
+    font-size: 1em;
+    color: white !important;
+    animation: none;
+  }
 
   
