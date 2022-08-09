@@ -286,7 +286,7 @@ router.get('/user/:username', async (req,res) => {
   
   console.log(group_name)
   res.render('grouppage', 
-  {posts, group_name, members},
+  {posts, members},
   ); 
   }
   } else {
