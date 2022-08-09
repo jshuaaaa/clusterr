@@ -17,10 +17,14 @@
 </div>
 
 
-<li id="g{{id}}" class="box1 groupName group-target js-modal-trigger" data-target="modal-js-example3">
+
+<li id="g{{id}}"" class="box1 groupName group-target js-modal-trigger" data-target="modal-js-example3">
+
 <p class="groupLink" id="group">{{group_name}}</p>
 <span class="groupMembers">Owner: <span id="owner">{{ownedBy}}</span></span>
 {{#if is_paid}}
 <span class="groupMembers">Costs: <span id="cost-of-group">{{cost}}</span> ETH</span>
+
 {{/if}}
+<span class="groupMembers"><span id="cost-of-group"></span></span>
 </li>

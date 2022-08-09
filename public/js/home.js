@@ -113,11 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById("create-group").addEventListener("click", createGroup)
 
 async function createGroup(e) {
-  const groupName = document.getElementById('group-name').value.trim().replace(/\s/g, "");
+
+  const group = document.getElementById('group-name').value.trim()
   const paid = document.getElementById('paid')
   const cost = document.getElementById('cost').value.trim()
   
-  if(groupName) {
+  if(group) {
     e.preventDefault()
     let isPaid = false
     if(paid.checked) {
@@ -134,7 +135,7 @@ async function createGroup(e) {
     }
     const response = await fetch('/api/groups/create', {
       method: 'POST',
-      body: JSON.stringify({ groupName, isPaid, cost}),
+      body: JSON.stringify({ group, isPaid, cost}),
       headers: { 'Content-Type': 'application/json' },
 })
     if(!response.ok) {
@@ -143,7 +144,7 @@ async function createGroup(e) {
     if(response.ok) {
 const addGroupUser = await fetch('/api/users/add-group', {
   method: 'POST',
-  body: JSON.stringify({ groupName}),
+  body: JSON.stringify({group}),
   headers: { 'Content-Type': 'application/json' },
 })
 console.log('done')
