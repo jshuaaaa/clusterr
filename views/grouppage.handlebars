@@ -14,19 +14,17 @@
 
 
 
-<button id="home">Home</button>
-<section class="card user groupHeader">
+<button class="bn5 homeBtn" id="home">Home</button>
+<section class="groupNameAndMembers">
  <div class="groupHeaderDiv">
 {{#each groups as |group|}}
 {{> groups}}
 {{/each}}
+ </div>
 
 
-{{#each members as |member|}}
-{{> groupmembers}}
-{{/each}}
-
-<button class="bn5 js-modal-trigger" data-target="modal-js-example">
+</section>
+<button class="bn5 createBTN js-modal-trigger" data-target="modal-js-example">
 
   Create a Post for this group!
 </button>
@@ -45,10 +43,18 @@
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
 <section class="card user groupPagePost">
+    <div class="members ">
+{{#each members as |member|}}
+{{> groupmembers}}
+{{/each}}
+</div>
+  <div class="GMPost">
     {{#each posts as |post|}}
     {{> groupposts }} 
     
     {{/each}}
+<div>
+
 </section>
 
 <script src="/js/group.js"></script>
