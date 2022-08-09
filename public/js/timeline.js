@@ -41,7 +41,7 @@ async function getPost(e) {
     }
 }
 
-const groupData = document.querySelectorAll('.group-target')
+const groupData = document.getElementById('group')
 console.log(groupData)
 
 groupData.forEach(element => {

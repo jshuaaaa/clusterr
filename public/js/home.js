@@ -46,9 +46,10 @@ document.querySelectorAll(".friendName").forEach((friend) => {
     });
   });
 
-document.querySelectorAll(".groupLink").forEach((item) => {
-  item.addEventListener("click", () => {
-    groupBackBtn.style.display = "inline";
+document.querySelectorAll(".user-groups").forEach((item) => {
+  item.addEventListener("click", (e) => {
+    let id = e.target.parentElement.id;
+    window.location.href = `/home/groups/${id}`
   });
 });
 
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById("create-group").addEventListener("click", createGroup)
 
 async function createGroup(e) {
-  const groupName = document.getElementById('group-name').value.trim()
+  const groupName = document.getElementById('group-name').value.trim().replace(/\s/g, "");
   const paid = document.getElementById('paid')
   const cost = document.getElementById('cost').value.trim()
   
