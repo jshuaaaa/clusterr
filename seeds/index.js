@@ -15,7 +15,7 @@ const seedAll = async () => {
   console.log('\n----- POSTS SYNCED -----');
 
   await seedGroups();
-  console.log('\n----- POSTS SYNCED -----');
+  console.log('\n----- GROUPS SYNCED -----');
 
   process.exit(0);
 };
