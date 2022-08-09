@@ -77,14 +77,15 @@ const owner = document.getElementById('owner').textContent
 let group = document.getElementById('group')
 
 group = group.textContent
-
+console.log(group)
 document.getElementById('join-group').addEventListener('click', joinGroup)
 
 const costOfGroup = document.getElementById('cost-of-group').textContent
 let cost = costOfGroup * 10 ** 18
 cost = cost.toString()
 
-async function joinGroup() {
+async function joinGroup(e) {
+
 
 const addGroupUser = await fetch('/api/users/add-group-user', {
         method: 'POST',

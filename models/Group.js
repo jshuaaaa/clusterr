@@ -15,7 +15,7 @@ Groups.init(
       type: DataTypes.BOOLEAN
     },
     cost: {
-      type: DataTypes.DECIMAL
+      type: DataTypes.DECIMAL(10,4)
     },
     ownedBy: {
       type: DataTypes.STRING,

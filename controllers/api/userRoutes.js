@@ -109,7 +109,7 @@ router.post('/add-group', async (req, res) => {
 
     const newUser = await UserGroups.create({
       user: req.session.user_id,
-      group_name: req.body.groupName || req.body.group
+      group_name: req.body.group
     });
     res.status(201).json(newUser);
   } catch (err) {
