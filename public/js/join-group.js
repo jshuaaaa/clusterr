@@ -109,12 +109,14 @@ const addGroupUser = await fetch('/api/users/add-group-user', {
                 headers: { 'Content-Type': 'application/json' },
               })
         }
+        document.location.href = '/home';
     } else {
         const addGroupUser = await fetch('/api/users/add-group', {
             method: 'POST',
             body: JSON.stringify({ group}),
             headers: { 'Content-Type': 'application/json' },
           })
+          document.location.href = '/home';
     }
 
 
