@@ -7,9 +7,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/941d116b7a.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/user.css">
 <link rel="stylesheet" href="/css/home.css">
 
+<header id="nav_header">
 
+      <img  id="home" class="logo" src="/img/clusterlogo.png">
+     <h1 class="navBoxHead">Cluster</h1>
+     <span></span>
+
+
+
+
+ 
+</header>
 
 <header class="homeHeader">
     <nav>
@@ -23,12 +34,13 @@
     
     </div>
             </li>
-            <li class="homeNavTitle"><img  id="clust" class="clusLogo" src="../img/clusterlogo.png"></li>
+            <li class="homeNavTitle"><img  id="clust" class="hidden clusLogo" src="../img/clusterlogo.png"></li>
             
-            <li class="homeNavTheme"><button type="button" class="themeSelector bn5">THEME SELECTOR</button> <button class="bn5" id="logout">Logout</button></li>
+            <li class="homeNavTheme"><button type="button" class="hidden themeSelector bn5">THEME SELECTOR</button> <button class="bn5" id="logout">Logout</button></li>
         </ul>
     </nav>
 </header>
+
 
 
 
@@ -106,7 +118,7 @@
         <h1></h1>
           <div id="centerBox" class="centerBox">
     {{!-- <input   class="postBox" type="text" id="post"> --}}
-    <a class="bn5 js-modal-trigger" data-target="modal-js-example3"><button class="hid" role="button"></button>POST</a>
+    <a class="postBTN bn5 js-modal-trigger" data-target="modal-js-example3"><button class="hid" role="button"></button>POST</a>
     </div>
     <div id="modal-js-example3" class=" modal">
   <img class="modalBackgroundImage" src="../img/ModBG2.png">

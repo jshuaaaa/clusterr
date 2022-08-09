@@ -265,7 +265,7 @@ transition: all .5s ease-in;
 
 .sectionLeft > ul > li {
   border: 2.5px solid rgba(255, 83, 255, 0.409);
-  font-size: 2em;
+  font-size: 2em !important;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   border-radius: 8px;
@@ -283,6 +283,7 @@ transition: all .5s ease-in;
   padding-bottom: 10%;
   background-color: rgba(225, 225, 225, 0.161);
   background-size: cover;
+ 
 
   /* color: rgba(255, 83, 255, 0.865);
   transform: skew(-2deg, -2deg);
@@ -291,6 +292,16 @@ transition: all .5s ease-in;
   border: 1px solid rgba(255, 83, 255, 0.374) ; */
 
   /* border-radius: 16px; */
+}
+#groupList {
+  z-index: 2 !important;
+}
+#group{
+  font-size: 1em !important;
+  color: rgba(255, 83, 255, 0.865)
+}
+.friendName{
+  font-size: 2.5em !important;
 }
 
 .sectionRight > ul > li {
@@ -887,6 +898,17 @@ margin-left: 2.5%; */
   width: 100%;
 }
 
+.navBoxHead{
+  margin-left: -5%;
+}
+
+.postBTN{
+  font-size: 2em !important;
+}
+
+#logout{
+  font-size: .4em;
+}
 
 
 /* button-85 {
