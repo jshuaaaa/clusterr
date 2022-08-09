@@ -134,8 +134,9 @@ async function createGroup(e) {
 })
     if(!response.ok) {
       alert("Paid groups are only available to metamask users!")
+      return
     }
-    if(response.ok) {
+
 const addGroupUser = await fetch('/api/users/add-group', {
   method: 'POST',
   body: JSON.stringify({group}),
@@ -143,10 +144,8 @@ const addGroupUser = await fetch('/api/users/add-group', {
 })
 console.log('done')
     }
-  } else {
-    alert("Please submit a group name")
-  }
-}
+  } 
+
 
 // functionality for adding a friend
 document.getElementById("add-friend").addEventListener("click", addFriend)
