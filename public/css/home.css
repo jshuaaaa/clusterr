@@ -910,6 +910,24 @@ margin-left: 2.5%; */
   font-size: .4em;
 }
 
+.makeGPrompt{
+  display: flex;
+}
+.makeGPrompt > *{
+ flex: 1 1 100% ;
+}
+.makeCBtn{
+  margin-top: -1.5%;
+  margin-right: -.5%;
+}
+.boxo{
+  margin-top: -2%;
+}
+#closeBtn{
+  right: -10%;
+}
+
+
 
 /* button-85 {
   padding: 0.6em 2em;
