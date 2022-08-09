@@ -1,6 +1,5 @@
 const seedPosts = require('./post-seeds');
 const seedUsers = require('./user-seeds');
-const seedGroups = require("./groups-seed")
 
 const sequelize = require('../config/connection');
 
@@ -13,9 +12,6 @@ const seedAll = async () => {
 
   await seedPosts();
   console.log('\n----- POSTS SYNCED -----');
-
-  await seedGroups();
-  console.log('\n----- GROUPS SYNCED -----');
 
   process.exit(0);
 };
