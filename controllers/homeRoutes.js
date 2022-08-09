@@ -62,10 +62,12 @@ router.get('/home',withAuth,  async (req,res) => {
         );
         const groups = dbUserGroupData.map(group => group.get({ plain: true }));
 
+        let ten = 0 
         const posts = []
-        for(let i = 0; i < 10; i++) {
+        for(let i = 0; ten < 10; i++) {
           let post =  array[Math.floor(Math.random() * array.length)];
           if (!posts.includes(post)) {
+            ten++
             posts.push(post);
           }
         }
@@ -106,12 +108,15 @@ router.get('/home',withAuth,  async (req,res) => {
         );
         const groups = dbGroupData.map(group => group.get({ plain: true }));
 
+        let ten = 0 
         const posts = []
-        for(let i =0; i<10; i++) {
-           let post =  array[Math.floor(Math.random() * array.length)]
-            posts.push(post)
+        for(let i = 0; ten < 10; i++) {
+          let post =  array[Math.floor(Math.random() * array.length)];
+          if (!posts.includes(post)) {
+            ten++
+            posts.push(post);
+          }
         }
-        
         const newGroup = await Groups.findAll({
           where: {
             group_name: req.params.groupname
