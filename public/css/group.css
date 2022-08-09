@@ -1,95 +1,113 @@
-#home + .user + .bn5 + .modal + .groupPagePost{
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: rgba(0, 255, 255, 0);
-    
-    border: none ;
-    box-shadow: none ;
-    
-}
 
-.groupPagePost > .timeline-post {
-    background: rgba(95, 93, 93, 0);
-   margin-left: 10%;
-   margin-right: 10%;
-   display: flex;
-   justify-content: center;
-    flex: 0 1 30% ;
-    height: 20vh;
-    flex-wrap: wrap;
-    
-}
-.groupPagePost > .timeline-post > header{
-    flex: 1 1 70%;
-    text-align: center;
-    font-size: 2.2em;
 
-}
-
-.groupPagePost > .timeline-post > header + p{
-    flex: 1 1 50%;
-    font-size: 1.8em;
-}
-
-.makePB{
-    font-size: 2em;
-    position: relative;
-    margin-left: 36.5%;
-    margin-top: 7%;
-    margin-bottom: 8%;
-}
-
-#home + .groupHeader{
-    display: flex;
-    border: none;
-    justify-content: center;
-    text-align: center;
-    background-color: rgba(255, 0, 0, 0);
-    box-shadow: none;
-   
-}
-#home + .groupHeader > .groupHeaderdiv{
+.groupNameandMembers{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15% ;
+    flex-wrap: wrap;
 }
 
-#home + .groupHeader > .groupHeaderdiv > h1 , h3 {  
-    max-width: fit-content;
-    padding: 2%;
-  
+.groupHeaderDiv{
+    text-align: center;
+    border:  1 px solid aqua;
+    box-shadow:  rgba(21, 0, 0, 0.145) 20px 20px 20px 0px,
+    rgba(0, 0, 0, 0.33) 25px 25px 25px 0px;
+  background-color: rgba(245, 245, 245, 0);
+  max-width: fit-content;
 }
 
-#home + .groupHeader > .groupHeaderdiv > h1 {
-    flex: 1 1 30%;
-    color: rgba(255, 83, 255, 0.845);
-    border-radius: 2px;
-    transform: skew(2deg, 2deg);
-    font-size: 1.8em;
-    box-shadow: rgb(0, 0, 0) -5px 5px, rgb(0, 0, 0) -10px 10px,
-      rgb(0, 0, 0) -15px 15px, rgba(10, 0, 0, 0.124) -20px 20px,
-      rgba(0, 0, 0, 0.33) -25px 25px;
-    backdrop-filter: blur(10px);
-    border: 2.5px solid rgba(255, 83, 255, 0.694);
-    background: rgba(176, 126, 247, 0.14);
-    -webkit-backdrop-filter: blur(7.2px);
+.groupHeaderDiv , .members{
+    flex:  1 1 55%;
+    align-self: center;
+}
+.groupHeaderDiv > li{
+    border: 2px solid aqua;
+    display: flex;
+    border-radius: 2%;
     
 
 }
-#home + .groupHeader > .groupHeaderdiv > h1 + h3 {
+
+.groupHeaderDiv > li > p{
+    
+    
+    text-align: center;
+   
+   padding-left: 20%  ;
+    border-radius: 4%;
     font-size: 1.8em;
-    color: rgb(79, 216, 243);
-    border-radius: 2px;
-    transform: skew(-2deg, -2deg);
-    backdrop-filter: blur(10px);
-    border: 2.5px solid rgb(79, 216, 243);
-    background: rgba(176, 126, 247, 0.14);
-    -webkit-backdrop-filter: blur(7.2px);
-    box-shadow: rgb(0, 0, 0) 5px 5px 0px 0px, rgb(0, 0, 0) 10px 10px 0px 0px,
-      rgb(0, 0, 0) 15px 15px 0px 0px, rgba(21, 0, 0, 0.145) 20px 20px 0px 0px,
-      rgba(0, 0, 0, 0.33) 25px 25px 0px 0px;
-    flex: 1 1 70%;
-    text-align: center !important;
-    max-width: fit-content;
+   margin: 20%;
+   margin-right: 100px;
+    
+    
+   
 }
+.members{
+    max-width: fit-content;
+   display: block;
+   height: 100vh;
+   margin-right: 15% ;
+   margin-left: 30%;
+   
+   
+}
+
+
+.timeline-post{
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 70%;
+    margin: 0% !important;
+    margin-bottom: 10% !important;
+    flex: 1 1 50%;
+    box-shadow:  rgba(21, 0, 0, 0.145) 20px 20px 20px 0px,
+    rgba(0, 0, 0, 0.33) 25px 25px 25px 0px !important;
+}
+.timeline-post > section {
+    
+}
+.groupPagePost{
+    border: none !important;
+    background-color: rgba(240, 248, 255, 0);
+    display: flex;
+    flex-direction: row !important;
+    flex: 1 1 50%;
+}
+.groupPagePost > .members > section{
+    border: 1px rgb(255, 105, 105) !important;
+    z-index: 4;
+    box-shadow: 
+    rgba(10, 0, 0, 0.124) -20px 20px 25px 0px,
+    rgba(0, 0, 0, 0.33) -25px 25px 25px 0px;
+}
+
+.members > section > h1 {
+    font-size: 3em;
+   
+    border-radius: 2%;
+    border: 2px solid hotpink !important;
+    
+    margin-left: 0%;
+} 
+
+.createBTN {
+    width: auto;
+    z-index: 1;
+    max-height: max-content;
+    margin-left: 41%;
+    background-color: rgba(255, 0, 0, 0) !important;
+    border: 2px solid hotpink !important
+}
+.bn5{
+    background-color: rgba(255, 0, 0, 0) !important;
+    border: 2px solid hotpink !important;
+    text-align: center;
+    }
+    
+    .homeBtn{
+        margin-left: 10%;
+        justify-content: center;
+        padding: 0%;
+    }
+
+  
