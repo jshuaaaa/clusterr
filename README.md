@@ -2,6 +2,10 @@
 ---
 ## Description
 Welcome to Cluster, your one stop shop to create any type of group, and connect with each other with each group member. Using metamask, we have also created the the use of creating paid groups so the owner can control who or what can be posted in said group. Using our proprietary data base, you can dynamically post and comment on eacther others post. We have created the perfect environment to interact with hundres of likeminded individuals.
+
+We also wanted to incorporate a feature specifically meant for metamask users, to help with web3 adoption, so we implemented a paid group feature, where users can create a group that will cost ETH to join, the smart contract was also written with the idea of scaling this project, so we incorporated a 5% fee on each transaction when a user joins a paid group that goes to the Cluster Treasury as a source of revenue.
+
+The smart contracts are currently deployed onto Goerli testnet
 ---
 # The App
 ---
