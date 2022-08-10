@@ -35,4 +35,4 @@ Lastely, we can view our group on a seperate page, with all post for said group.
 ---
 # Links
 - [GitHub Repo](https://github.com/jshuaaaa/clusterr)
-- [Heroku](https://cluster-102.herokuapp.com)
+- [Heroku](https://clusterr-1.herokuapp.com/home)
